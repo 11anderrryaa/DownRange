@@ -35,6 +35,11 @@ class Gun : Codable {
         return []
     }
     
+    static func loadExample() -> [Gun] {
+        let exampleGun = Gun(name: "Enter Gun Name")
+        return [exampleGun]
+    }
+    
     static let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let archiveURL = documentsDirectory.appendingPathComponent("DownRange.Gun").appendingPathExtension("plist")
+    static let archiveURL = documentsDirectory.appendingPathComponent("Gun").appendingPathExtension("plist")
 }

@@ -59,7 +59,7 @@
             </objects>
             <point key="canvasLocation" x="718.84057971014499" y="75.669642857142847"/>
         </scene>
-        <!--Range Table View Controller-->
+        <!--Scope Settings-->
         <scene sceneID="irj-hc-PCb">
             <objects>
                 <tableViewController id="O0Z-ag-f2z" customClass="RangeTableViewController" customModule="DownRange" customModuleProvider="target" sceneMemberID="viewController">
@@ -122,7 +122,7 @@
                             <outlet property="delegate" destination="O0Z-ag-f2z" id="1eL-Qj-2Yg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="oqO-rW-vbc">
+                    <navigationItem key="navigationItem" title="Scope Settings" id="oqO-rW-vbc">
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="plus" catalog="system" id="RjL-jH-Qjm">
                                 <connections>
@@ -133,6 +133,11 @@
                             <barButtonItem systemItem="edit" id="KUB-fu-JHl">
                                 <connections>
                                     <action selector="EditButtonTapped:" destination="O0Z-ag-f2z" id="I15-B3-S0J"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="info.circle" catalog="system" id="vvP-eh-k7R">
+                                <connections>
+                                    <action selector="infoButtonTapped:" destination="O0Z-ag-f2z" id="tRL-0B-yyW"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -189,6 +194,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3Qf-Xo-DNF">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="info.circle" catalog="system" id="8EK-ZR-dyw">
+                            <connections>
+                                <action selector="infoButtonTapped:" destination="aZl-LD-kAR" id="L9i-Ig-yhi"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="fxC-qS-3Bx">
                             <connections>
                                 <action selector="saveButtonTapped:" destination="aZl-LD-kAR" id="63w-Bv-hw9"/>
@@ -248,6 +258,7 @@
         <segue reference="2X6-Ef-jCo"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

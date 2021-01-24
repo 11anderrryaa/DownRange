@@ -16,6 +16,19 @@ class GunListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guns = Gun.loadFromFile()
+        
+        if guns.count == 0 {
+                let infoAlertController = UIAlertController(title: "Add Gun Data by pushing the +  button", message: nil, preferredStyle: .alert)
+                
+                let cancelButton = UIAlertAction(title: "Close", style: .cancel, handler: .none)
+                
+                infoAlertController.addAction(cancelButton)
+                present(infoAlertController, animated: true, completion: nil)
+        }
+        
+        
     }
     // MARK: - Table view data source
     
@@ -42,6 +55,7 @@ class GunListTableViewController: UITableViewController {
             guns.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+        Gun.saveToFile(guns: guns)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -61,12 +75,12 @@ class GunListTableViewController: UITableViewController {
                 else {return}
                 let gun = Gun(name: nameText)
                 self.guns.append(gun)
-                 //trying to presist Data
+                Gun.saveToFile(guns: self.guns)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
             }
-            Gun.saveToFile(guns: guns)
+           
             alertController.addAction(submitAction)
             present(alertController, animated: true, completion: nil)
         }
@@ -77,6 +91,7 @@ class GunListTableViewController: UITableViewController {
             {return print("error in segue")}
             
             vc.gun = guns[selectedIndexPath.row]
+            vc.guns = guns
         }
     }
 }

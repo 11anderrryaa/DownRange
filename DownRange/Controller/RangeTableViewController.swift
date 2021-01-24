@@ -12,7 +12,8 @@ class RangeTableViewController: UITableViewController, YardChanged {
     func yardTapped(profile: Profile) {
         
     }
-    var gun : Gun?
+    var gun : Gun? 
+    var guns : [Gun] = []
     var profiles : [Profile] {
         guard let gun = gun else {return []}
         return gun.profiles
@@ -21,13 +22,24 @@ class RangeTableViewController: UITableViewController, YardChanged {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
+//       profiles = Profile.loadFromFile()
     }
 
     // MARK: - Table view data source
 
     @IBAction func addYards(_ sender: UIBarButtonItem) {
     }
+    
+    @IBAction func infoButtonTapped(_ sender: UIBarButtonItem) {
+        let infoAlertController = UIAlertController(title: "Zero in your scope before you select the desired distance", message: nil, preferredStyle: .actionSheet)
+        
+        let cancelButton = UIAlertAction(title: "Back", style: .cancel, handler: .none)
+        
+        infoAlertController.addAction(cancelButton)
+        present(infoAlertController, animated: true, completion: nil)
+    }
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        
@@ -68,6 +80,7 @@ class RangeTableViewController: UITableViewController, YardChanged {
             gun?.profiles.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+        Gun.saveToFile(guns: guns)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -81,6 +94,7 @@ class RangeTableViewController: UITableViewController, YardChanged {
         let movedRange = gun.profiles.remove(at: sourceIndexPath.row)
         
         gun.profiles.insert(movedRange, at: destinationIndexPath.row)
+        Gun.saveToFile(guns: guns)
         reloadTableView()
     }
     
@@ -93,7 +107,7 @@ class RangeTableViewController: UITableViewController, YardChanged {
         guard segue.source is ZeroDistanceViewController else {
             return
         }
-        
+        Gun.saveToFile(guns: guns)
         reloadTableView()
 //        **Save your presistant data with a save to file func here**
     }

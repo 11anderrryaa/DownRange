@@ -31,6 +31,16 @@ class ZeroDistanceViewController: UIViewController {
         
     }
     
+    
+    @IBAction func infoButtonTapped(_ sender: UIBarButtonItem) {
+        let infoAlertController = UIAlertController(title: "1.Enter in the new distance in yards.2.Based off the shortest distance you zero'd in at, enter in the different below. (Up/Down)=(+/-) & (Right/Left)=(+/-)", message: nil, preferredStyle: .alert)
+        
+        let cancelButton = UIAlertAction(title: "Back", style: .cancel, handler: .none)
+        
+        infoAlertController.addAction(cancelButton)
+        present(infoAlertController, animated: true, completion: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
