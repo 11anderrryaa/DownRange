@@ -15,22 +15,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Down Range" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtI-Lz-2ld">
-                                <rect key="frame" x="133" y="201" width="148" height="32.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Down-Range-Logo-Reticle1" translatesAutoresizingMaskIntoConstraints="NO" id="Dnc-Tb-ZSN">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Down Range" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRm-f5-Nis">
+                                <rect key="frame" x="0.0" y="134" width="414" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="nh8-wG-pGy">
-                                <rect key="frame" x="197" y="331" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="CtI-Lz-2ld" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="157" id="5w5-3P-qg6"/>
-                            <constraint firstItem="CtI-Lz-2ld" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="rWN-tk-dwS"/>
+                            <constraint firstAttribute="bottom" secondItem="Dnc-Tb-ZSN" secondAttribute="bottom" id="33R-qc-pgY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MRm-f5-Nis" secondAttribute="trailing" id="8CV-Wf-ekb"/>
+                            <constraint firstItem="Dnc-Tb-ZSN" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9w1-t4-eTH"/>
+                            <constraint firstItem="Dnc-Tb-ZSN" firstAttribute="top" secondItem="MRm-f5-Nis" secondAttribute="bottom" constant="-175" id="AE3-Uh-ox3"/>
+                            <constraint firstItem="MRm-f5-Nis" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Enl-mX-nBg"/>
+                            <constraint firstItem="Dnc-Tb-ZSN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FQF-L7-oVt"/>
+                            <constraint firstItem="Dnc-Tb-ZSN" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Jcq-lp-LnZ"/>
+                            <constraint firstItem="Dnc-Tb-ZSN" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="T3Z-tK-zjR"/>
+                            <constraint firstItem="MRm-f5-Nis" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UcO-bY-hEO"/>
+                            <constraint firstItem="Dnc-Tb-ZSN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jAS-Hv-ffU"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -39,4 +46,7 @@
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Down-Range-Logo-Reticle1" width="600" height="598"/>
+    </resources>
 </document>
