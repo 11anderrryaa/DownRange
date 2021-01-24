@@ -69,6 +69,8 @@ class GunListTableViewController: UITableViewController {
                 textField.placeholder = "gun name💥🔫"
                 textField.textAlignment = .center
             }
+            let cancelButton = UIAlertAction(title: "Cancel", style: .destructive, handler: .none)
+
             
             let submitAction = UIAlertAction(title: "Submit", style: .default) { (alert) in
                 guard let textFieldArray = alertController.textFields,             let nameText = textFieldArray[0].text
@@ -81,7 +83,9 @@ class GunListTableViewController: UITableViewController {
                 }
             }
            
+            alertController.addAction(cancelButton)
             alertController.addAction(submitAction)
+           
             present(alertController, animated: true, completion: nil)
         }
         else if segue.identifier == "ToProfiles" {
