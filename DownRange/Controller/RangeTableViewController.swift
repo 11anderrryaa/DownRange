@@ -16,33 +16,42 @@ class RangeTableViewController: UITableViewController, YardChanged {
     var guns : [Gun] = []
     var profiles : [Profile] {
         guard let gun = gun else {return []}
-        return gun.profiles
+        return gun.profiles //gun.profiles are the Scope Settings
     }
     
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//       profiles = Profile.loadFromFile()
+        //       profiles = Profile.loadFromFile()
     }
-
+    
     // MARK: - Table view data source
-
+    
     @IBAction func addYards(_ sender: UIBarButtonItem) {
     }
     
-    @IBAction func infoButtonTapped(_ sender: UIBarButtonItem) {
-        let infoAlertController = UIAlertController(title: "Zero in your scope before you select the desired distance", message: nil, preferredStyle: .actionSheet)
-        
-        let cancelButton = UIAlertAction(title: "Back", style: .cancel, handler: .none)
-        
-        infoAlertController.addAction(cancelButton)
-        present(infoAlertController, animated: true, completion: nil)
+    @IBAction func infoButtonTapped(_ sender: Any?) {
+        if gun?.profiles.count == 0 {
+            let infoAlertController = UIAlertController(title: "Add Starting Range", message: "Zero in your scope and add that distance to scope settings", preferredStyle: .alert)
+            
+            let cancelButton = UIAlertAction(title: "Back", style: .cancel, handler: .none)
+            
+            infoAlertController.addAction(cancelButton)
+            present(infoAlertController, animated: true, completion: nil)
+        } else {
+            
+            let infoAlertController = UIAlertController(title: "Zero in your scope before you select the desired distance", message: nil, preferredStyle: .alert)
+            
+            let cancelButton = UIAlertAction(title: "Back", style: .cancel, handler: .none)
+            
+            infoAlertController.addAction(cancelButton)
+            present(infoAlertController, animated: true, completion: nil)
+        }
     }
     
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
+        
         if section == 0 {
             return profiles.count
         } else {
@@ -68,7 +77,7 @@ class RangeTableViewController: UITableViewController, YardChanged {
         return cell
     }
     // configuring the Edit Button
-    @IBAction func EditButtonTapped(_ sender: UIBarButtonItem) {
+    @IBAction func EditButtonTapped(_ sender: Any?) {
         let tableViewEditingMode = tableView.isEditing
         
         tableView.setEditing(!tableViewEditingMode, animated: true)
@@ -80,6 +89,7 @@ class RangeTableViewController: UITableViewController, YardChanged {
             gun?.profiles.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+        
         Gun.saveToFile(guns: guns)
     }
     
@@ -87,9 +97,9 @@ class RangeTableViewController: UITableViewController, YardChanged {
         
         reloadTableView()
     }
-    
+   
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-
+        
         guard let gun = gun else {return}
         let movedRange = gun.profiles.remove(at: sourceIndexPath.row)
         
@@ -98,9 +108,9 @@ class RangeTableViewController: UITableViewController, YardChanged {
         reloadTableView()
     }
     
-  override func viewWillAppear(_ animated: Bool) {
-    reloadTableView()
-       }
+    override func viewWillAppear(_ animated: Bool) {
+        reloadTableView()
+    }
     
     @IBAction func unwindFromZeroDistance(_ segue: UIStoryboardSegue) {
         
@@ -109,7 +119,7 @@ class RangeTableViewController: UITableViewController, YardChanged {
         }
         Gun.saveToFile(guns: guns)
         reloadTableView()
-//        **Save your presistant data with a save to file func here**
+        //        **Save your presistant data with a save to file func here**
     }
     
     func reloadTableView() {

@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		832DA33325B8972C00EE0AE5 /* Gun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832DA33225B8972C00EE0AE5 /* Gun.swift */; };
+		832DA34425BF24FB00EE0AE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8358DBA9259240FC005C8F83 /* Assets.xcassets */; };
 		8358DBA1259240FC005C8F83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8358DBA0259240FC005C8F83 /* AppDelegate.swift */; };
 		8358DBA3259240FC005C8F83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8358DBA2259240FC005C8F83 /* SceneDelegate.swift */; };
 		8358DBA8259240FC005C8F83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8358DBA6259240FC005C8F83 /* Main.storyboard */; };
-		8358DBAA259240FC005C8F83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8358DBA9259240FC005C8F83 /* Assets.xcassets */; };
 		8358DBAD259240FC005C8F83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8358DBAB259240FC005C8F83 /* LaunchScreen.storyboard */; };
 		8358DBB8259240FC005C8F83 /* DownRangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8358DBB7259240FC005C8F83 /* DownRangeTests.swift */; };
 		8358DBC3259240FD005C8F83 /* DownRangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8358DBC2259240FD005C8F83 /* DownRangeUITests.swift */; };
@@ -274,7 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8358DBAD259240FC005C8F83 /* LaunchScreen.storyboard in Resources */,
-				8358DBAA259240FC005C8F83 /* Assets.xcassets in Resources */,
+				832DA34425BF24FB00EE0AE5 /* Assets.xcassets in Resources */,
 				8358DBA8259240FC005C8F83 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

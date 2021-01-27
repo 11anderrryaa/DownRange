@@ -19,19 +19,22 @@ class GunListTableViewController: UITableViewController {
         
         guns = Gun.loadFromFile()
         
+        
+        showAlert()
+        
+    }
+    // MARK: - Table view data source
+    
+    func showAlert() {
         if guns.count == 0 {
-                let infoAlertController = UIAlertController(title: "Add Gun Data by pushing the +  button", message: nil, preferredStyle: .alert)
+                let infoAlertController = UIAlertController(title: "Add Gun Data by pushing the + button", message: nil, preferredStyle: .alert)
                 
                 let cancelButton = UIAlertAction(title: "Close", style: .cancel, handler: .none)
                 
                 infoAlertController.addAction(cancelButton)
                 present(infoAlertController, animated: true, completion: nil)
         }
-        
-        
     }
-    // MARK: - Table view data source
-    
     
     func getGun(at indexPath: IndexPath) -> Gun {
         guns[indexPath.row]
@@ -47,6 +50,7 @@ class GunListTableViewController: UITableViewController {
         let gun = getGun(at: indexPath)
         cell.configure(gun: gun)
         
+        
         return cell
     }
     
@@ -56,6 +60,7 @@ class GunListTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
         Gun.saveToFile(guns: guns)
+        showAlert()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
