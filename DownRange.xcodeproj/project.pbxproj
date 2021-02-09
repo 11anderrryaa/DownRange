@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		832DA33325B8972C00EE0AE5 /* Gun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832DA33225B8972C00EE0AE5 /* Gun.swift */; };
-		832DA34425BF24FB00EE0AE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8358DBA9259240FC005C8F83 /* Assets.xcassets */; };
 		8358DBA1259240FC005C8F83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8358DBA0259240FC005C8F83 /* AppDelegate.swift */; };
 		8358DBA3259240FC005C8F83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8358DBA2259240FC005C8F83 /* SceneDelegate.swift */; };
 		8358DBA8259240FC005C8F83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8358DBA6259240FC005C8F83 /* Main.storyboard */; };
@@ -19,6 +18,10 @@
 		8358DBDC25924DCA005C8F83 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8358DBDB25924DCA005C8F83 /* Profile.swift */; };
 		8358DBE92592534A005C8F83 /* RangeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8358DBE82592534A005C8F83 /* RangeTableViewController.swift */; };
 		8358DBF225939578005C8F83 /* GunTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8358DBF125939578005C8F83 /* GunTableViewCell.swift */; };
+		83859B9825C85A370073D775 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83859B9725C85A370073D775 /* Assets.xcassets */; };
+		83859B9D25D2E1410073D775 /* DropChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83859B9C25D2E1410073D775 /* DropChartTableViewCell.swift */; };
+		83859BA225D2E1580073D775 /* DropChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83859BA125D2E1580073D775 /* DropChart.swift */; };
+		83859BA725D2E1BE0073D775 /* DropChartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83859BA625D2E1BE0073D775 /* DropChartTableViewController.swift */; };
 		83BDFB8625A36C8E000840FD /* ZeroDistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BDFB8525A36C8E000840FD /* ZeroDistanceViewController.swift */; };
 		83DF78D425A4B68100EF0B36 /* MilsAdustmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF78D325A4B68100EF0B36 /* MilsAdustmentTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -46,7 +49,6 @@
 		8358DBA0259240FC005C8F83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8358DBA2259240FC005C8F83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8358DBA7259240FC005C8F83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8358DBA9259240FC005C8F83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8358DBAC259240FC005C8F83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8358DBAE259240FC005C8F83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8358DBB3259240FC005C8F83 /* DownRangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DownRangeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +61,10 @@
 		8358DBDB25924DCA005C8F83 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		8358DBE82592534A005C8F83 /* RangeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeTableViewController.swift; sourceTree = "<group>"; };
 		8358DBF125939578005C8F83 /* GunTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GunTableViewCell.swift; sourceTree = "<group>"; };
+		83859B9725C85A370073D775 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		83859B9C25D2E1410073D775 /* DropChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropChartTableViewCell.swift; sourceTree = "<group>"; };
+		83859BA125D2E1580073D775 /* DropChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropChart.swift; sourceTree = "<group>"; };
+		83859BA625D2E1BE0073D775 /* DropChartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropChartTableViewController.swift; sourceTree = "<group>"; };
 		83BDFB8525A36C8E000840FD /* ZeroDistanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroDistanceViewController.swift; sourceTree = "<group>"; };
 		83DF78D325A4B68100EF0B36 /* MilsAdustmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilsAdustmentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,8 +120,8 @@
 				8358DBA0259240FC005C8F83 /* AppDelegate.swift */,
 				8358DBA2259240FC005C8F83 /* SceneDelegate.swift */,
 				8358DBA6259240FC005C8F83 /* Main.storyboard */,
-				8358DBA9259240FC005C8F83 /* Assets.xcassets */,
 				8358DBAB259240FC005C8F83 /* LaunchScreen.storyboard */,
+				83859B9725C85A370073D775 /* Assets.xcassets */,
 				8358DBAE259240FC005C8F83 /* Info.plist */,
 				83DF78DA25A4BA9900EF0B36 /* Controller */,
 				83DF78D925A4BA6A00EF0B36 /* View */,
@@ -147,6 +153,7 @@
 			children = (
 				8358DBDB25924DCA005C8F83 /* Profile.swift */,
 				832DA33225B8972C00EE0AE5 /* Gun.swift */,
+				83859BA125D2E1580073D775 /* DropChart.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,6 +163,7 @@
 			children = (
 				8358DBF125939578005C8F83 /* GunTableViewCell.swift */,
 				83DF78D325A4B68100EF0B36 /* MilsAdustmentTableViewCell.swift */,
+				83859B9C25D2E1410073D775 /* DropChartTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,6 +174,7 @@
 				8358DBD6259241B2005C8F83 /* GunListTableViewController.swift */,
 				83BDFB8525A36C8E000840FD /* ZeroDistanceViewController.swift */,
 				8358DBE82592534A005C8F83 /* RangeTableViewController.swift */,
+				83859BA625D2E1BE0073D775 /* DropChartTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -274,7 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8358DBAD259240FC005C8F83 /* LaunchScreen.storyboard in Resources */,
-				832DA34425BF24FB00EE0AE5 /* Assets.xcassets in Resources */,
+				83859B9825C85A370073D775 /* Assets.xcassets in Resources */,
 				8358DBA8259240FC005C8F83 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,10 +310,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				83DF78D425A4B68100EF0B36 /* MilsAdustmentTableViewCell.swift in Sources */,
+				83859BA225D2E1580073D775 /* DropChart.swift in Sources */,
 				832DA33325B8972C00EE0AE5 /* Gun.swift in Sources */,
+				83859BA725D2E1BE0073D775 /* DropChartTableViewController.swift in Sources */,
 				83BDFB8625A36C8E000840FD /* ZeroDistanceViewController.swift in Sources */,
 				8358DBE92592534A005C8F83 /* RangeTableViewController.swift in Sources */,
 				8358DBDC25924DCA005C8F83 /* Profile.swift in Sources */,
+				83859B9D25D2E1410073D775 /* DropChartTableViewCell.swift in Sources */,
 				8358DBA1259240FC005C8F83 /* AppDelegate.swift in Sources */,
 				8358DBF225939578005C8F83 /* GunTableViewCell.swift in Sources */,
 				8358DBA3259240FC005C8F83 /* SceneDelegate.swift in Sources */,

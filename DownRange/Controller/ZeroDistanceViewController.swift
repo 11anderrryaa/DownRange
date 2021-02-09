@@ -17,12 +17,27 @@ class ZeroDistanceViewController: UIViewController {
     @IBOutlet weak var upDownTextField: UITextField!
     
     @IBOutlet weak var leftRightTextField: UITextField!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        saveButton.isEnabled = false
+    }
+    
+    @IBAction func textEditingChanged(_ sender: UITextField) {
+        updateSaveButtonState()
+    }
+    
+    
+    func updateSaveButtonState() {
+        let yardsText = yardsTextField.text ?? ""
+        let upDownText = upDownTextField.text ?? ""
+        let leftRightText = leftRightTextField.text ?? ""
+        saveButton.isEnabled = !yardsText.isEmpty && !upDownText.isEmpty && !leftRightText.isEmpty
     }
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
+        
         guard let distance = yardsTextField.text, let x = upDownTextField.text, let y = leftRightTextField.text else { return }
         
         profile?.yards = Int(distance)!

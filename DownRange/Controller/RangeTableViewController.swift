@@ -22,8 +22,10 @@ class RangeTableViewController: UITableViewController, YardChanged {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //       profiles = Profile.loadFromFile()
+    }
+    @IBAction func segmentControl(_ sender: Any) {
+        
     }
     
     // MARK: - Table view data source
@@ -64,25 +66,27 @@ class RangeTableViewController: UITableViewController, YardChanged {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AdjustmentCell", for: indexPath) as! MilsAdustmentTableViewCell
         
         cell.delegate = self
-        
-        let profile = profiles[indexPath.row]
+        let sortedProfiles = profiles.sorted(by: { $0.yards < $1.yards })
+            let profile = sortedProfiles[indexPath.row]
         var selectedProfile : Profile?
         if let indexPath = tableView.indexPathForSelectedRow {
-            selectedProfile = profiles[indexPath.row]
+            selectedProfile = sortedProfiles[indexPath.row]
         }
+        
+       
         
         cell.updateView(with: profile, selectedProfile: selectedProfile)
         cell.yardsButton.titleLabel?.text = "???"
         cell.yardsButton.title(for: .normal)
         return cell
     }
-    // configuring the Edit Button
-    @IBAction func EditButtonTapped(_ sender: Any?) {
-        let tableViewEditingMode = tableView.isEditing
-        
-        tableView.setEditing(!tableViewEditingMode, animated: true)
-    }
-    
+//    // configuring the Edit Button
+//    @IBAction func EditButtonTapped(_ sender: Any?) {
+//        let tableViewEditingMode = tableView.isEditing
+//
+//        tableView.setEditing(!tableViewEditingMode, animated: true)
+//    }
+//
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -94,6 +98,13 @@ class RangeTableViewController: UITableViewController, YardChanged {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        let bgColorView = UIView()
+//        let myBrown = UIColor.init(displayP3Red: 168, green: 150, blue: 119, alpha: 66)
+        bgColorView.backgroundColor = UIColor.brown
+
+        cell?.selectedBackgroundView = bgColorView
         
         reloadTableView()
     }

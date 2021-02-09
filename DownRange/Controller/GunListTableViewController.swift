@@ -59,9 +59,12 @@ class GunListTableViewController: UITableViewController {
             guns.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+        
         Gun.saveToFile(guns: guns)
         showAlert()
     }
+    
+   
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
@@ -102,5 +105,15 @@ class GunListTableViewController: UITableViewController {
             vc.gun = guns[selectedIndexPath.row]
             vc.guns = guns
         }
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        let bgColorView = UIView()
+//        let myBrown = UIColor.init(displayP3Red: 168, green: 150, blue: 119, alpha: 66)
+        bgColorView.backgroundColor = UIColor.brown
+
+        cell?.selectedBackgroundView = bgColorView
+        
     }
 }

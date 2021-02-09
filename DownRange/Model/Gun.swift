@@ -10,14 +10,17 @@ import Foundation
 class Gun : Codable {
     
     var name : String
-    var profiles : [Profile] = [
-//        Profile(yards: 100, x: 0, y: 0),
-//        Profile(yards: 200, x: 1, y: 0),
-//        Profile(yards: 300, x: 2, y: -0.5)
-    ]
+    var profiles : [Profile] = []
+//    var velocity : Double
+//    var energy : Double
+//    var time : Double
     
-    init (name: String) {
+    init (name: String/*, velocity: Double, energy: Double, time: Double*/) {
         self.name = name
+//        self.velocity = velocity
+//        self.energy = energy
+//        self.time = time
+        
     }
     
     static func saveToFile(guns: [Gun]) {
@@ -35,10 +38,6 @@ class Gun : Codable {
         return []
     }
     
-    static func loadExample() -> [Gun] {
-        let exampleGun = Gun(name: "Enter Gun Name")
-        return [exampleGun]
-    }
     
     static let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     static let archiveURL = documentsDirectory.appendingPathComponent("Gun").appendingPathExtension("plist")
