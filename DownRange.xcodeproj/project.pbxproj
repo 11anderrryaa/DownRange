@@ -22,6 +22,7 @@
 		83859B9D25D2E1410073D775 /* DropChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83859B9C25D2E1410073D775 /* DropChartTableViewCell.swift */; };
 		83859BA225D2E1580073D775 /* DropChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83859BA125D2E1580073D775 /* DropChart.swift */; };
 		83859BA725D2E1BE0073D775 /* DropChartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83859BA625D2E1BE0073D775 /* DropChartTableViewController.swift */; };
+		83859BAC25D590BA0073D775 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83859BAB25D590BA0073D775 /* WebViewController.swift */; };
 		83BDFB8625A36C8E000840FD /* ZeroDistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BDFB8525A36C8E000840FD /* ZeroDistanceViewController.swift */; };
 		83DF78D425A4B68100EF0B36 /* MilsAdustmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF78D325A4B68100EF0B36 /* MilsAdustmentTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		83859B9C25D2E1410073D775 /* DropChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropChartTableViewCell.swift; sourceTree = "<group>"; };
 		83859BA125D2E1580073D775 /* DropChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropChart.swift; sourceTree = "<group>"; };
 		83859BA625D2E1BE0073D775 /* DropChartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropChartTableViewController.swift; sourceTree = "<group>"; };
+		83859BAB25D590BA0073D775 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		83BDFB8525A36C8E000840FD /* ZeroDistanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroDistanceViewController.swift; sourceTree = "<group>"; };
 		83DF78D325A4B68100EF0B36 /* MilsAdustmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilsAdustmentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +122,7 @@
 				8358DBA0259240FC005C8F83 /* AppDelegate.swift */,
 				8358DBA2259240FC005C8F83 /* SceneDelegate.swift */,
 				8358DBA6259240FC005C8F83 /* Main.storyboard */,
+				83859BAB25D590BA0073D775 /* WebViewController.swift */,
 				8358DBAB259240FC005C8F83 /* LaunchScreen.storyboard */,
 				83859B9725C85A370073D775 /* Assets.xcassets */,
 				8358DBAE259240FC005C8F83 /* Info.plist */,
@@ -320,6 +323,7 @@
 				8358DBA1259240FC005C8F83 /* AppDelegate.swift in Sources */,
 				8358DBF225939578005C8F83 /* GunTableViewCell.swift in Sources */,
 				8358DBA3259240FC005C8F83 /* SceneDelegate.swift in Sources */,
+				83859BAC25D590BA0073D775 /* WebViewController.swift in Sources */,
 				8358DBD7259241B2005C8F83 /* GunListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -42,21 +42,16 @@ class MilsAdustmentTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    @IBAction func yardsButtonTapped(_ sender: Any) {
-        if let profile = profile {
-            delegate?.yardTapped(profile: profile)
-        }
-    }
+//    @IBAction func yardsButtonTapped(_ sender: Any) {
+//        if let profile = profile {
+//            delegate?.yardTapped(profile: profile)
+//        }
+//    }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-    
-//    static func loadSampleProfile() -> [Profile] {
-//        return [Profile(name: "Gun", yards: 100, x: 0, y: 0),
-//        Profile(name: "My Gun", yards: 200, x: 1, y: 1)]
-//    }
 }
 

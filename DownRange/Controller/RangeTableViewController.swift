@@ -18,14 +18,21 @@ class RangeTableViewController: UITableViewController, YardChanged {
         guard let gun = gun else {return []}
         return gun.profiles //gun.profiles are the Scope Settings
     }
+    @IBOutlet weak var segmentoutlet: UISegmentedControl!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //       profiles = Profile.loadFromFile()
     }
+    
     @IBAction func segmentControl(_ sender: Any) {
-        
+        if segmentoutlet.selectedSegmentIndex == 0 {
+//            load zero data source
+        } else {
+//            load drop data source
+            
+        }
     }
     
     // MARK: - Table view data source

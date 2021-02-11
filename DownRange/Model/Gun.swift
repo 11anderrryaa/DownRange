@@ -11,15 +11,11 @@ class Gun : Codable {
     
     var name : String
     var profiles : [Profile] = []
-//    var velocity : Double
-//    var energy : Double
-//    var time : Double
+    var dropChart : [DropChart] = []
     
-    init (name: String/*, velocity: Double, energy: Double, time: Double*/) {
+    init (name: String) {
         self.name = name
-//        self.velocity = velocity
-//        self.energy = energy
-//        self.time = time
+
         
     }
     
