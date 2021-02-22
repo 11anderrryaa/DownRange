@@ -178,7 +178,9 @@
                             </barButtonItem>
                             <barButtonItem title="Item" image="safari" catalog="system" id="Bo8-fi-iYu">
                                 <connections>
-                                    <segue destination="UVq-Mm-HyU" kind="presentation" id="aq1-5b-ybX"/>
+                                    <segue destination="UVq-Mm-HyU" kind="popoverPresentation" popoverAnchorBarButtonItem="Bo8-fi-iYu" id="aq1-5b-ybX">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -439,7 +441,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2TY-As-iSd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="933" y="785"/>
+            <point key="canvasLocation" x="-2584" y="2659"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="d55-yR-v8E">
@@ -462,6 +464,7 @@
                         <viewLayoutGuide key="safeArea" id="QN0-xu-dmD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="isj-r2-Bjc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3F8-gA-6zx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

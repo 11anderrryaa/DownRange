@@ -122,7 +122,6 @@
 				8358DBA0259240FC005C8F83 /* AppDelegate.swift */,
 				8358DBA2259240FC005C8F83 /* SceneDelegate.swift */,
 				8358DBA6259240FC005C8F83 /* Main.storyboard */,
-				83859BAB25D590BA0073D775 /* WebViewController.swift */,
 				8358DBAB259240FC005C8F83 /* LaunchScreen.storyboard */,
 				83859B9725C85A370073D775 /* Assets.xcassets */,
 				8358DBAE259240FC005C8F83 /* Info.plist */,
@@ -177,6 +176,7 @@
 				8358DBD6259241B2005C8F83 /* GunListTableViewController.swift */,
 				83BDFB8525A36C8E000840FD /* ZeroDistanceViewController.swift */,
 				8358DBE82592534A005C8F83 /* RangeTableViewController.swift */,
+				83859BAB25D590BA0073D775 /* WebViewController.swift */,
 				83859BA625D2E1BE0073D775 /* DropChartTableViewController.swift */,
 			);
 			path = Controller;
