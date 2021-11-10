@@ -18,7 +18,7 @@ class GunListTableViewController: UITableViewController {
     // MARK: - Table view data source
     func showAlert() {
         if guns.count == 0 {
-            let infoAlertController = UIAlertController(title: "Add Gun Data by pushing the + button", message: nil, preferredStyle: .alert)
+            let infoAlertController = UIAlertController(title: "Add Rifle's zero'd range by pushing the + button", message: nil, preferredStyle: .alert)
             let cancelButton = UIAlertAction(title: "Close", style: .cancel, handler: .none)
             infoAlertController.addAction(cancelButton)
             present(infoAlertController, animated: true, completion: nil)
