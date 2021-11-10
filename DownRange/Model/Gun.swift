@@ -8,15 +8,12 @@
 import Foundation
 
 class Gun : Codable {
-    
     var name : String
     var profiles : [Profile] = []
     var dropChart : [DropChart] = []
     
     init (name: String) {
         self.name = name
-
-        
     }
     
     static func saveToFile(guns: [Gun]) {
@@ -33,8 +30,6 @@ class Gun : Codable {
         }
         return []
     }
-    
-    
     static let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     static let archiveURL = documentsDirectory.appendingPathComponent("Gun").appendingPathExtension("plist")
 }

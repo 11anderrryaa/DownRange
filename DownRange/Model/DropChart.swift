@@ -13,8 +13,6 @@ class DropChart : Codable {
     var weight : Double
     var muzzleVelocity : Double
     var ballisticsCoeffcient : Double
-//    var zeroRange : Double
-//    var scopeHeight : Double
     var range : Double
     var drop : Double
     var velocity : Double

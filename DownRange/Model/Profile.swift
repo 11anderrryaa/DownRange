@@ -9,22 +9,13 @@ import Foundation
 
 
 class Profile : Codable {
-    
     var yards: Int
-    
     var x: Double
-    
     var y: Double
     
-    
     init(yards: Int, x: Double, y: Double) {
-       
         self.yards = yards
         self.x = x
         self.y = y
     }
 }
-
-
-
-

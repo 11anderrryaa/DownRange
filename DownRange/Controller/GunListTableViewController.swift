@@ -9,48 +9,34 @@ import UIKit
 
 class GunListTableViewController: UITableViewController {
     
-    var guns: [Gun]  = [
-//        Profile(name: "300 Win Mag", yards: 100, x: 0, y: 0)
-    ]
-    
-    
+    var guns: [Gun]  = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         guns = Gun.loadFromFile()
-        
-        
         showAlert()
-        
     }
     // MARK: - Table view data source
-    
     func showAlert() {
         if guns.count == 0 {
-                let infoAlertController = UIAlertController(title: "Add Gun Data by pushing the + button", message: nil, preferredStyle: .alert)
-                
-                let cancelButton = UIAlertAction(title: "Close", style: .cancel, handler: .none)
-                
-                infoAlertController.addAction(cancelButton)
-                present(infoAlertController, animated: true, completion: nil)
+            let infoAlertController = UIAlertController(title: "Add Gun Data by pushing the + button", message: nil, preferredStyle: .alert)
+            let cancelButton = UIAlertAction(title: "Close", style: .cancel, handler: .none)
+            infoAlertController.addAction(cancelButton)
+            present(infoAlertController, animated: true, completion: nil)
         }
     }
     
     func getGun(at indexPath: IndexPath) -> Gun {
         guns[indexPath.row]
     }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return guns.count
     }
     
-   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "GunCell", for: indexPath) as? GunTableViewCell else {fatalError("No Cell!")}
-        
         let gun = getGun(at: indexPath)
         cell.configure(gun: gun)
-        
-        
         return cell
     }
     
@@ -59,29 +45,20 @@ class GunListTableViewController: UITableViewController {
             guns.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
-        
         Gun.saveToFile(guns: guns)
         showAlert()
     }
     
-   
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-       
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "AddGun" {
-            
             let alertController = UIAlertController(title: "Enter Gun", message: nil, preferredStyle: .alert)
-            
             alertController.addTextField { (textField) in
                 textField.placeholder = "gun name💥🔫"
                 textField.textAlignment = .center
             }
             let cancelButton = UIAlertAction(title: "Cancel", style: .destructive, handler: .none)
-
-            
             let submitAction = UIAlertAction(title: "Submit", style: .default) { (alert) in
-                guard let textFieldArray = alertController.textFields,             let nameText = textFieldArray[0].text
+                guard let textFieldArray = alertController.textFields, let nameText = textFieldArray[0].text
                 else {return}
                 let gun = Gun(name: nameText)
                 self.guns.append(gun)
@@ -90,30 +67,23 @@ class GunListTableViewController: UITableViewController {
                     self.tableView.reloadData()
                 }
             }
-           
             alertController.addAction(cancelButton)
             alertController.addAction(submitAction)
-           
             present(alertController, animated: true, completion: nil)
         }
         else if segue.identifier == "ToProfiles" {
             guard let vc = segue.destination as? RangeTableViewController,
                   let selectedIndexPath = tableView.indexPathForSelectedRow else
-            
-            {return print("error in segue")}
-            
+                  {return print("error in segue")}
             vc.gun = guns[selectedIndexPath.row]
             vc.guns = guns
         }
     }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
-        
         let bgColorView = UIView()
-//        let myBrown = UIColor.init(displayP3Red: 168, green: 150, blue: 119, alpha: 66)
         bgColorView.backgroundColor = UIColor.brown
-
         cell?.selectedBackgroundView = bgColorView
-        
     }
 }
