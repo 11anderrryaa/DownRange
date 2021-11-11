@@ -43,6 +43,7 @@ class GunListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             guns.remove(at: indexPath.row)
+            
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
         Gun.saveToFile(guns: guns)
