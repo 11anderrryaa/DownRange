@@ -81,9 +81,9 @@ class GunListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
-        let bgColorView = UIView()
-        bgColorView.backgroundColor = UIColor.brown
-        cell?.selectedBackgroundView = bgColorView
+//        let cell = tableView.cellForRow(at: indexPath)
+//        let bgColorView = UIView()
+//        bgColorView.backgroundColor = UIColor.brown
+//        cell?.selectedBackgroundView = bgColorView
     }
 }
