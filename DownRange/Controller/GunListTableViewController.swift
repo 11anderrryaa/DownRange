@@ -51,9 +51,9 @@ class GunListTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "AddGun" {
-            let alertController = UIAlertController(title: "Enter Gun", message: nil, preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Enter Rifle", message: nil, preferredStyle: .alert)
             alertController.addTextField { (textField) in
-                textField.placeholder = "gun name💥🔫"
+                textField.placeholder = "Rifle Name💥🔫"
                 textField.textAlignment = .center
             }
             let cancelButton = UIAlertAction(title: "Cancel", style: .destructive, handler: .none)
@@ -81,9 +81,9 @@ class GunListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cell = tableView.cellForRow(at: indexPath)
-//        let bgColorView = UIView()
-//        bgColorView.backgroundColor = UIColor.brown
-//        cell?.selectedBackgroundView = bgColorView
+        //        let cell = tableView.cellForRow(at: indexPath)
+        //        let bgColorView = UIView()
+        //        bgColorView.backgroundColor = UIColor.brown
+        //        cell?.selectedBackgroundView = bgColorView
     }
 }

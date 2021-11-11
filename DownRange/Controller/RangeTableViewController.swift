@@ -9,8 +9,6 @@ import UIKit
 
 class RangeTableViewController: UITableViewController, YardChanged {
     
-    func yardTapped(profile: Profile) {
-    }
     var gun : Gun?
     var guns : [Gun] = []
     var profiles : [Profile] {
@@ -36,6 +34,9 @@ class RangeTableViewController: UITableViewController, YardChanged {
             infoAlertController.addAction(cancelButton)
             present(infoAlertController, animated: true, completion: nil)
         }
+    }
+    
+    func yardTapped(profile: Profile) {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,10 +71,10 @@ class RangeTableViewController: UITableViewController, YardChanged {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
-        let bgColorView = UIView()
-        bgColorView.backgroundColor = UIColor.brown
-        cell?.selectedBackgroundView = bgColorView
+//        let cell = tableView.cellForRow(at: indexPath)
+//        let bgColorView = UIView()
+//        bgColorView.backgroundColor = UIColor.brown
+//        cell?.selectedBackgroundView = bgColorView
         reloadTableView()
     }
     

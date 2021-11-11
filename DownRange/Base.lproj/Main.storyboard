@@ -106,7 +106,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AdjustmentCell" rowHeight="50" id="eLd-KL-0rG" customClass="MilsAdustmentTableViewCell" customModule="DownRange" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AdjustmentCell" rowHeight="50" id="eLd-KL-0rG" customClass="MilsAdustmentTableViewCell" customModule="DownRange" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88.5" width="414" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eLd-KL-0rG" id="QDp-Hq-mc1">
