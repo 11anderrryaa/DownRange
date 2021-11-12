@@ -10,12 +10,30 @@ import UIKit
 class GunListTableViewController: UITableViewController {
     
     var guns: [Gun]  = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         guns = Gun.loadFromFile()
         showAlert()
+//        setTableViewBackgroundGradient(sender: self, topColor, bottomColor)
     }
+    
     // MARK: - Table view data source
+    func setTableViewBackgroundGradient(sender: UITableViewController, _ topColor:UIColor, _ bottomColor:UIColor) {
+
+        let gradientBackgroundColors = [topColor.cgColor, bottomColor.cgColor]
+        let gradientLocations = [NSNumber(0.0), NSNumber(1.0)]
+
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = gradientBackgroundColors
+        gradientLayer.locations = gradientLocations
+
+        gradientLayer.frame = sender.tableView.bounds
+        let backgroundView = UIView(frame: sender.tableView.bounds)
+        backgroundView.layer.insertSublayer(gradientLayer, at: 0)
+        sender.tableView.backgroundView = backgroundView
+    }
+    
     func showAlert() {
         if guns.count == 0 {
             let infoAlertController = UIAlertController(title: "Add Rifle's zero'd range by pushing the + button", message: nil, preferredStyle: .alert)
