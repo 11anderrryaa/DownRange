@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -189,6 +190,50 @@
             </objects>
             <point key="canvasLocation" x="1734.7826086956522" y="75.669642857142847"/>
         </scene>
+        <!--Rifles-->
+        <scene sceneID="Pd5-ET-VU8">
+            <objects>
+                <collectionViewController id="PVI-Ix-KoH" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="zvo-34-ykH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lwy-Pm-Ea8">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8T9-cM-l44">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="o9u-no-wjz">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <segue destination="O0Z-ag-f2z" kind="show" identifier="ToProfiles" id="YwQ-7c-c1P"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="PVI-Ix-KoH" id="eBE-X1-WNi"/>
+                            <outlet property="delegate" destination="PVI-Ix-KoH" id="gt5-Nh-jtp"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Rifles" id="iAG-YE-gM4">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="VLZ-Xq-2HZ">
+                            <connections>
+                                <segue destination="O0Z-ag-f2z" kind="show" identifier="AddGun" id="Uwr-mb-raO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u9N-FX-fNL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="719" y="759"/>
+        </scene>
         <!--Web View Controller-->
         <scene sceneID="d55-yR-v8E">
             <objects>
@@ -214,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3F8-gA-6zx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1734.7826086956522" y="784.82142857142856"/>
+            <point key="canvasLocation" x="2644.9275362318845" y="784.82142857142856"/>
         </scene>
         <!--Zero Distance View Controller-->
         <scene sceneID="5yy-jl-aIE">
@@ -341,9 +386,27 @@
             </objects>
             <point key="canvasLocation" x="2576.811594202899" y="75.669642857142847"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yBO-ad-7Gv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jc6-Ue-gLX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="n4f-CJ-PaJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PVI-Ix-KoH" kind="relationship" relationship="rootViewController" id="zlZ-Rq-3QU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MnJ-v0-fvR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-191" y="759"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LE2-HQ-jqC"/>
+        <segue reference="YwQ-7c-c1P"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="info.circle" catalog="system" width="128" height="121"/>

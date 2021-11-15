@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83042CE82742FD69003FE2F3 /* GunListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83042CE72742FD68003FE2F3 /* GunListCollectionViewController.swift */; };
 		832DA33325B8972C00EE0AE5 /* Gun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832DA33225B8972C00EE0AE5 /* Gun.swift */; };
 		8358DBA1259240FC005C8F83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8358DBA0259240FC005C8F83 /* AppDelegate.swift */; };
 		8358DBA3259240FC005C8F83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8358DBA2259240FC005C8F83 /* SceneDelegate.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		83042CE72742FD68003FE2F3 /* GunListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GunListCollectionViewController.swift; sourceTree = "<group>"; };
 		832DA33225B8972C00EE0AE5 /* Gun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gun.swift; sourceTree = "<group>"; };
 		8358DB9D259240FC005C8F83 /* DownRange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DownRange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8358DBA0259240FC005C8F83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				8358DBD6259241B2005C8F83 /* GunListTableViewController.swift */,
+				83042CE72742FD68003FE2F3 /* GunListCollectionViewController.swift */,
 				83BDFB8525A36C8E000840FD /* ZeroDistanceViewController.swift */,
 				8358DBE82592534A005C8F83 /* RangeTableViewController.swift */,
 				83859BAB25D590BA0073D775 /* WebViewController.swift */,
@@ -297,6 +300,7 @@
 				8358DBA1259240FC005C8F83 /* AppDelegate.swift in Sources */,
 				8358DBF225939578005C8F83 /* GunTableViewCell.swift in Sources */,
 				8358DBA3259240FC005C8F83 /* SceneDelegate.swift in Sources */,
+				83042CE82742FD69003FE2F3 /* GunListCollectionViewController.swift in Sources */,
 				83859BAC25D590BA0073D775 /* WebViewController.swift in Sources */,
 				8358DBD7259241B2005C8F83 /* GunListTableViewController.swift in Sources */,
 			);
