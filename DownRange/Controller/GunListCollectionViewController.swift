@@ -7,10 +7,11 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class GunListCollectionViewController: UICollectionViewController {
-
+    var guns : [Gun] = [
+        Gun(name: "Rifle Name")
+    ]
+    var reuseIdentifier = "Cell"
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +24,15 @@ class GunListCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
+
+    func showAlert() {
+        if guns[0].name == "Rifle Name" {
+            let infoAlertController = UIAlertController(title: "Add Rifle's name", message: nil, preferredStyle: .alert)
+            let cancelButton = UIAlertAction(title: "Close", style: .cancel, handler: .none)
+            infoAlertController.addAction(cancelButton)
+            present(infoAlertController, animated: true, completion: nil)
+        }
+    }
     /*
     // MARK: - Navigation
 
@@ -37,7 +47,7 @@ class GunListCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return guns.count
     }
 
 
