@@ -193,7 +193,7 @@
         <!--Rifles-->
         <scene sceneID="Pd5-ET-VU8">
             <objects>
-                <collectionViewController id="PVI-Ix-KoH" sceneMemberID="viewController">
+                <collectionViewController id="PVI-Ix-KoH" customClass="GunListCollectionViewController" customModule="DownRange" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="zvo-34-ykH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

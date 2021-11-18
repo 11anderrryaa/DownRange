@@ -11,7 +11,7 @@ class GunListCollectionViewController: UICollectionViewController {
     var guns : [Gun] = [
         Gun(name: "Rifle Name")
     ]
-    var reuseIdentifier = "Cell"
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,7 +19,7 @@ class GunListCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
 
         // Do any additional setup after loading the view.
     }
@@ -38,14 +38,13 @@ class GunListCollectionViewController: UICollectionViewController {
     }
 
     // MARK: UICollectionViewDataSource
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return guns.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? GunCollectionViewCell else { fatalError("No Cell")}
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? GunCollectionViewCell else { fatalError("No Cell")}
         let gun = getgun(at: indexPath)
         cell.configure(gun: gun)
         return cell
@@ -53,6 +52,25 @@ class GunListCollectionViewController: UICollectionViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddGun" {
+            let alertController = UIAlertController(title: "Enter Rifle", message: nil, preferredStyle: .alert)
+            alertController.addTextField { (textField) in
+                textField.placeholder = "Rifle Name💥🔫"
+                textField.textAlignment = .center
+            }
+            let cancelButton = UIAlertAction(title: "Cancel", style: .destructive, handler: .none)
+            let submitAction = UIAlertAction(title: "Submit", style: .default) { (alert) in
+                guard let textFieldArray = alertController.textFields, let nameText = textFieldArray[0].text
+                else {return}
+                let gun = Gun(name: nameText)
+                self.guns.append(gun)
+                Gun.saveToFile(guns: self.guns)
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+            alertController.addAction(cancelButton)
+            alertController.addAction(submitAction)
+            present(alertController, animated: true, completion: nil)
             print("Add Gun")
         } else if segue.identifier == "ToProfiles" {
             print("ToProfiles")
