@@ -42,6 +42,11 @@ class GunListCollectionViewController: UICollectionViewController {
         // #warning Incomplete implementation, return the number of items
         return guns.count
     }
+    
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+
+    }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? GunCollectionViewCell else { fatalError("No Cell")}
