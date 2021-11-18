@@ -23,7 +23,10 @@ class GunListCollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
     }
-
+    
+    func getgun(at indecPath: IndexPath) -> Gun {
+        guns[indecPath.row]
+    }
 
     func showAlert() {
         if guns[0].name == "Rifle Name" {
@@ -33,36 +36,29 @@ class GunListCollectionViewController: UICollectionViewController {
             present(infoAlertController, animated: true, completion: nil)
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of items
         return guns.count
     }
 
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
-    }
-
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? GunCollectionViewCell else { fatalError("No Cell")}
+        let gun = getgun(at: indexPath)
+        cell.configure(gun: gun)
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddGun" {
+            print("Add Gun")
+        } else if segue.identifier == "ToProfiles" {
+            print("ToProfiles")
+        }
+    }
+ 
 
     // MARK: UICollectionViewDelegate
 

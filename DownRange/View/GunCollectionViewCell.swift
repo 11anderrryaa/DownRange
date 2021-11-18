@@ -9,20 +9,13 @@ import UIKit
 
 class GunCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var gunName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    @IBOutlet weak var gunName: UILabel!
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    
-    
-
     
     func configure(gun: Gun){
-        gunName.text = gun.name
+            gunName.text = gun.name
+        }
     }
-    
-}
-}
