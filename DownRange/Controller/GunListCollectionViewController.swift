@@ -8,6 +8,7 @@
 import UIKit
 
 class GunListCollectionViewController: UICollectionViewController {
+    
     var guns : [Gun] = [
         Gun(name: "Rifle Name")
     ]
@@ -49,7 +50,7 @@ class GunListCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? GunCollectionViewCell else { fatalError("No Cell")}
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? GunCollectionViewCell else { fatalError()}
         let gun = getgun(at: indexPath)
         cell.configure(gun: gun)
         return cell
