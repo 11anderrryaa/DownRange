@@ -13,9 +13,10 @@ class GunCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+//        gunName.text = "Gun Name"
     }
     
-    func configure(gun: Gun){
+    func configure(gun: Gun) {
             gunName.text = gun.name
         }
     }

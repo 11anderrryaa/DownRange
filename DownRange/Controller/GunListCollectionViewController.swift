@@ -19,8 +19,8 @@ class GunListCollectionViewController: UICollectionViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        // Register cell classes ** what does Register do and why did it throw an error for cellForItemAt:
+//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
 
         // Do any additional setup after loading the view.
     }
@@ -50,10 +50,17 @@ class GunListCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? GunCollectionViewCell else { fatalError()}
+        
+//        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! GunCollectionViewCell? {
+//            let gun = getgun(at: indexPath) ?? Gun(name: "need to add data")
+//            cell.configure(gun: gun)
+//            return cell
+//        }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! GunCollectionViewCell? else { fatalError()}
         let gun = getgun(at: indexPath)
         cell.configure(gun: gun)
         return cell
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
