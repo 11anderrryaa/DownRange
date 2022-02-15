@@ -41,13 +41,10 @@ class GunListCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
+        print(guns.count)
         return guns.count
     }
-    
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
 
-    }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -62,6 +59,10 @@ class GunListCollectionViewController: UICollectionViewController {
         return cell
         
     }
+    
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddGun" {
