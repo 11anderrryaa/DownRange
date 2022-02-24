@@ -10,6 +10,7 @@ import UIKit
 class ZeroDistanceViewController: UIViewController {
     
     var profile: Profile?
+    
     @IBOutlet weak var yardsTextField: UITextField!
     @IBOutlet weak var upDownTextField: UITextField!
     @IBOutlet weak var leftRightTextField: UITextField!
@@ -20,31 +21,34 @@ class ZeroDistanceViewController: UIViewController {
         saveButton.isEnabled = false
     }
     
-    @IBAction func textEditingChanged(_ sender: UITextField) {
-        updateSaveButtonState()
-    }
-    
-    func updateSaveButtonState() {
-        let yardsText = yardsTextField.text ?? ""
-        let upDownText = upDownTextField.text ?? ""
-        let leftRightText = leftRightTextField.text ?? ""
-        saveButton.isEnabled = !yardsText.isEmpty && !upDownText.isEmpty
-//        && !leftRightText.isEmpty
-    }
-    
+    //MARK: - Methods for UIButtons
+
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         guard let distance = yardsTextField.text, let x = upDownTextField.text, let y = leftRightTextField.text else { return }
         profile?.yards = Int(distance)!
         profile?.x = Double(x)!
         profile?.y = Double(y)!
     }
-    
+
     @IBAction func infoButtonTapped(_ sender: UIBarButtonItem) {
         let infoAlertController = UIAlertController(title: "Enter in the new distance in yards.", message: "Based off the shortest distance you zero'd in at, enter in the different below. (Down/Up) = (-/+)  (Left/Right) = (-/+)", preferredStyle: .alert)
         let cancelButton = UIAlertAction(title: "Back", style: .cancel, handler: .none)
         infoAlertController.addAction(cancelButton)
         present(infoAlertController, animated: true, completion: nil)
     }
+    
+     //MARK: - UI Update Methods
+    
+    @IBAction func textEditingChanged(_ sender: UITextField) {
+        updateSaveButtonState()
+    }
+    func updateSaveButtonState() {
+        let yardsText = yardsTextField.text ?? ""
+        let upDownText = upDownTextField.text ?? ""
+        saveButton.isEnabled = !yardsText.isEmpty && !upDownText.isEmpty
+    }
+    
+    //MARK: - Segue Methods
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)

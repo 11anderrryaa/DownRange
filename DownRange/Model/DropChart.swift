@@ -7,6 +7,7 @@
 
 import Foundation
 
+//To BE Continued After MVP
 class DropChart : Codable {
     
     var caliber : Double

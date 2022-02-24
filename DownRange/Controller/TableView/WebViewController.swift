@@ -11,16 +11,18 @@ import WebKit
 class WebViewController: UIViewController, WKUIDelegate {
     
     var webview: WKWebView!
-    override func loadView() {
-        let webconfiguration = WKWebViewConfiguration()
-        webview = WKWebView(frame: .zero, configuration: webconfiguration)
-        webview.uiDelegate = self
-        view = webview
-    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let myURL = URL(string: "https://lrbc.vortexoptics.com/#!/")
         let myRequest = URLRequest(url: myURL!)
         webview.load(myRequest)
+    }
+    
+    override func loadView() {
+        let webconfiguration = WKWebViewConfiguration()
+        webview = WKWebView(frame: .zero, configuration: webconfiguration)
+        webview.uiDelegate = self
+        view = webview
     }
 }

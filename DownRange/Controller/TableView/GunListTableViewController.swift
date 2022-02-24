@@ -17,34 +17,7 @@ class GunListTableViewController: UITableViewController {
         showAlert()
     }
     
-    // MARK: - Table view data source
-    func setTableViewBackgroundGradient(sender: UITableViewController, _ topColor:UIColor, _ bottomColor:UIColor) {
-
-        let gradientBackgroundColors = [topColor.cgColor, bottomColor.cgColor]
-        let gradientLocations = [NSNumber(0.0), NSNumber(1.0)]
-
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = gradientBackgroundColors
-        gradientLayer.locations = gradientLocations
-
-        gradientLayer.frame = sender.tableView.bounds
-        let backgroundView = UIView(frame: sender.tableView.bounds)
-        backgroundView.layer.insertSublayer(gradientLayer, at: 0)
-        sender.tableView.backgroundView = backgroundView
-    }
-    
-    func showAlert() {
-        if guns.count == 0 {
-            let infoAlertController = UIAlertController(title: "Add Rifle's zero'd range by pushing the + button", message: nil, preferredStyle: .alert)
-            let cancelButton = UIAlertAction(title: "Close", style: .cancel, handler: .none)
-            infoAlertController.addAction(cancelButton)
-            present(infoAlertController, animated: true, completion: nil)
-        }
-    }
-    
-    func getGun(at indexPath: IndexPath) -> Gun {
-        guns[indexPath.row]
-    }
+    // MARK: - TableView DataSource Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return guns.count
@@ -57,15 +30,31 @@ class GunListTableViewController: UITableViewController {
         return cell
     }
     
+    //MARK: - TableView Delegate Methods
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             guns.remove(at: indexPath.row)
-            
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
         Gun.saveToFile(guns: guns)
         showAlert()
     }
+    
+    func getGun(at indexPath: IndexPath) -> Gun {
+         guns[indexPath.row]
+     }
+    
+    func showAlert() {
+        if guns.count == 0 {
+            let infoAlertController = UIAlertController(title: "Add Rifle's zero'd range by pushing the + button", message: nil, preferredStyle: .alert)
+            let cancelButton = UIAlertAction(title: "Close", style: .cancel, handler: .none)
+            infoAlertController.addAction(cancelButton)
+            present(infoAlertController, animated: true, completion: nil)
+        }
+    }
+    
+    //MARK: - Prepare For Segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "AddGun" {
@@ -96,12 +85,5 @@ class GunListTableViewController: UITableViewController {
             vc.gun = guns[selectedIndexPath.row]
             vc.guns = guns
         }
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        let cell = tableView.cellForRow(at: indexPath)
-        //        let bgColorView = UIView()
-        //        bgColorView.backgroundColor = UIColor.brown
-        //        cell?.selectedBackgroundView = bgColorView
     }
 }

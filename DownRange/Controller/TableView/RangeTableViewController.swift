@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RangeTableViewController: UITableViewController, YardChanged {
+class RangeTableViewController: UITableViewController {
     
     var gun : Gun?
     var guns : [Gun] = []
@@ -21,7 +21,7 @@ class RangeTableViewController: UITableViewController, YardChanged {
         super.viewDidLoad()
     }
     
-    // MARK: - Table view data source
+    //MARK: - UIButton Methods
     
     @IBAction func infoButtonTapped(_ sender: Any?) {
         if gun?.profiles.count == 0 {
@@ -37,8 +37,30 @@ class RangeTableViewController: UITableViewController, YardChanged {
         }
     }
     
-    func yardTapped(profile: Profile) {
+    //MARK: - Segue Methods
+    
+    @IBAction func unwindFromZeroDistance(_ segue: UIStoryboardSegue) {
+        guard segue.source is ZeroDistanceViewController else { return }
+        Gun.saveToFile(guns: guns)
+        reloadTableView()
     }
+    
+    // MARK: - TableView DataSource
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+           let cell = tableView.dequeueReusableCell(withIdentifier: "AdjustmentCell", for: indexPath) as! MilsAdustmentTableViewCell
+           let sortedProfiles = profiles.sorted(by: { $0.yards < $1.yards })
+           let profile = sortedProfiles[indexPath.row]
+           var selectedProfile : Profile?
+           
+           if let indexPath = tableView.indexPathForSelectedRow {
+               selectedProfile = sortedProfiles[indexPath.row]
+           }
+           cell.updateView(with: profile, selectedProfile: selectedProfile)
+           cell.yardsButton.titleLabel?.text = "???"
+           cell.yardsButton.title(for: .normal)
+           return cell
+       }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
@@ -48,22 +70,8 @@ class RangeTableViewController: UITableViewController, YardChanged {
         }
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AdjustmentCell", for: indexPath) as! MilsAdustmentTableViewCell
-        cell.delegate = self
-        let sortedProfiles = profiles.sorted(by: { $0.yards < $1.yards })
-        let profile = sortedProfiles[indexPath.row]
-        var selectedProfile : Profile?
-        
-        if let indexPath = tableView.indexPathForSelectedRow {
-            selectedProfile = sortedProfiles[indexPath.row]
-        }
-        cell.updateView(with: profile, selectedProfile: selectedProfile)
-        cell.yardsButton.titleLabel?.text = "???"
-        cell.yardsButton.title(for: .normal)
-        return cell
-    }
-    
+    //MARK: - TableView Delegate Methods
+
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             gun?.profiles.remove(at: indexPath.row)
@@ -84,22 +92,18 @@ class RangeTableViewController: UITableViewController, YardChanged {
         reloadTableView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        reloadTableView()
-    }
+    //MARK: - UI Update Methods
     
-    @IBAction func unwindFromZeroDistance(_ segue: UIStoryboardSegue) {
-        guard segue.source is ZeroDistanceViewController else { return }
-        Gun.saveToFile(guns: guns)
+    override func viewWillAppear(_ animated: Bool) {
         reloadTableView()
     }
     
     func reloadTableView() {
         let indexPath = tableView.indexPathForSelectedRow
         
+        tableView.reloadData()
         if profiles.count > 1 {
             tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         }
-        tableView.reloadData()
     }
 }
