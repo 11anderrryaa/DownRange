@@ -7,6 +7,7 @@
 
 import UIKit
 
+//To BE Continued After MVP
 class DropChartTableViewCell: UITableViewCell {
     
     var dropchart : DropChart?
@@ -17,6 +18,16 @@ class DropChartTableViewCell: UITableViewCell {
     @IBOutlet weak var energyLabel: UILabel!
     @IBOutlet weak var timeOfFlightLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
+    //MARK: - UI Update Methods
+    
     func updateChart(with dropchart: DropChart?) {
         guard let range = dropchart?.range, let drop = dropchart?.drop, let velocity = dropchart?.velocity, let energy =  dropchart?.energy, let tof = dropchart?.timeOfFlight else {return}
         self.dropchart = dropchart
@@ -26,12 +37,4 @@ class DropChartTableViewCell: UITableViewCell {
         energyLabel.text =  String(energy)
         timeOfFlightLabel.text = String(tof
         )}
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
 }

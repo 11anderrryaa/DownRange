@@ -13,7 +13,8 @@ class RangeTableViewController: UITableViewController, YardChanged {
     var guns : [Gun] = []
     var profiles : [Profile] {
         guard let gun = gun else {return []}
-        return gun.profiles //gun.profiles are the Scope Settings
+        //gun.profiles are the Scope Settings
+        return gun.profiles
     }
     
     override func viewDidLoad() {
@@ -43,16 +44,17 @@ class RangeTableViewController: UITableViewController, YardChanged {
         if section == 0 {
             return profiles.count
         } else {
-            return 0
+            return 1
         }
     }
-    // displaying the adjustments
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AdjustmentCell", for: indexPath) as! MilsAdustmentTableViewCell
         cell.delegate = self
         let sortedProfiles = profiles.sorted(by: { $0.yards < $1.yards })
         let profile = sortedProfiles[indexPath.row]
         var selectedProfile : Profile?
+        
         if let indexPath = tableView.indexPathForSelectedRow {
             selectedProfile = sortedProfiles[indexPath.row]
         }
@@ -71,10 +73,6 @@ class RangeTableViewController: UITableViewController, YardChanged {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cell = tableView.cellForRow(at: indexPath)
-//        let bgColorView = UIView()
-//        bgColorView.backgroundColor = UIColor.brown
-//        cell?.selectedBackgroundView = bgColorView
         reloadTableView()
     }
     
@@ -91,17 +89,17 @@ class RangeTableViewController: UITableViewController, YardChanged {
     }
     
     @IBAction func unwindFromZeroDistance(_ segue: UIStoryboardSegue) {
-        guard segue.source is ZeroDistanceViewController else {
-            return
-        }
+        guard segue.source is ZeroDistanceViewController else { return }
         Gun.saveToFile(guns: guns)
         reloadTableView()
-        //        **Save your presistant data with a save to file func here**
     }
     
     func reloadTableView() {
         let indexPath = tableView.indexPathForSelectedRow
+        
+        if profiles.count > 1 {
+            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        }
         tableView.reloadData()
-        tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
     }
 }

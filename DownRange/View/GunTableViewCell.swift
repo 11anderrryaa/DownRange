@@ -9,10 +9,11 @@ import UIKit
 
 class GunTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var gunName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    @IBOutlet weak var gunName: UILabel!
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

@@ -15,7 +15,6 @@ class GunListTableViewController: UITableViewController {
         super.viewDidLoad()
         guns = Gun.loadFromFile()
         showAlert()
-//        setTableViewBackgroundGradient(sender: self, topColor, bottomColor)
     }
     
     // MARK: - Table view data source

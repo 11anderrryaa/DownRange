@@ -16,17 +16,10 @@ class GunListCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes ** what does Register do and why did it throw an error for cellForItemAt:
-//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
-
-        // Do any additional setup after loading the view.
     }
     
-    func getgun(at indecPath: IndexPath) -> Gun {
-        guns[indecPath.row]
+    func getgun(at indexPath: IndexPath) -> Gun {
+        guns[indexPath.row]
     }
 
     func showAlert() {
@@ -40,8 +33,6 @@ class GunListCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        print(guns.count)
         return guns.count
     }
 
@@ -59,7 +50,6 @@ class GunListCollectionViewController: UICollectionViewController {
         return cell
         
     }
-    
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
             }
@@ -91,7 +81,6 @@ class GunListCollectionViewController: UICollectionViewController {
         }
     }
  
-
     // MARK: UICollectionViewDelegate
 
     /*

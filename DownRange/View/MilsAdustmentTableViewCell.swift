@@ -7,13 +7,10 @@
 
 import UIKit
 
-protocol YardChanged {
-    func yardTapped(profile: Profile)
-}
-
 class MilsAdustmentTableViewCell: UITableViewCell {
+    
     var profile : Profile?
-    var delegate : YardChanged?
+
     @IBOutlet weak var yardsButton: UIButton!
     @IBOutlet weak var upDownLabel: UILabel!
     @IBOutlet weak var leftRightLabel: UILabel!

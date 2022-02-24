@@ -7,6 +7,7 @@
 
 import UIKit
 
+//To BE Continued After MVP
 class DropChartTableViewController: UITableViewController {
     var dropCharts : [DropChart] = [DropChart(caliber: 0.300, weight: 0.150, muzzleVelocity: 3400, ballisticsCoeffcient: 0.415, range: 0, drop: 0, velocity: 3400, energy: 4000, timeOfFlight: 0)
     ]

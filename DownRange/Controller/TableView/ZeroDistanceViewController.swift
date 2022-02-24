@@ -28,7 +28,8 @@ class ZeroDistanceViewController: UIViewController {
         let yardsText = yardsTextField.text ?? ""
         let upDownText = upDownTextField.text ?? ""
         let leftRightText = leftRightTextField.text ?? ""
-        saveButton.isEnabled = !yardsText.isEmpty && !upDownText.isEmpty && !leftRightText.isEmpty
+        saveButton.isEnabled = !yardsText.isEmpty && !upDownText.isEmpty
+//        && !leftRightText.isEmpty
     }
     
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
