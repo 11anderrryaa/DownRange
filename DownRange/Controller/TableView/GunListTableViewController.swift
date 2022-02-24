@@ -47,7 +47,7 @@ class GunListTableViewController: UITableViewController {
     
     func showAlert() {
         if guns.count == 0 {
-            let infoAlertController = UIAlertController(title: "Add Rifle's zero'd range by pushing the + button", message: nil, preferredStyle: .alert)
+            let infoAlertController = UIAlertController(title: "Add Rifle Name By Pushing The + Button", message: nil, preferredStyle: .alert)
             let cancelButton = UIAlertAction(title: "Close", style: .cancel, handler: .none)
             infoAlertController.addAction(cancelButton)
             present(infoAlertController, animated: true, completion: nil)
@@ -64,7 +64,7 @@ class GunListTableViewController: UITableViewController {
                 textField.textAlignment = .center
             }
             let cancelButton = UIAlertAction(title: "Cancel", style: .destructive, handler: .none)
-            let submitAction = UIAlertAction(title: "Submit", style: .default) { (alert) in
+            let saveButton = UIAlertAction(title: "Save", style: .default) { (alert) in
                 guard let textFieldArray = alertController.textFields, let nameText = textFieldArray[0].text
                 else {return}
                 let gun = Gun(name: nameText)
@@ -75,7 +75,7 @@ class GunListTableViewController: UITableViewController {
                 }
             }
             alertController.addAction(cancelButton)
-            alertController.addAction(submitAction)
+            alertController.addAction(saveButton)
             present(alertController, animated: true, completion: nil)
         }
         else if segue.identifier == "ToProfiles" {

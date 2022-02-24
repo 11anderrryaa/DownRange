@@ -24,12 +24,13 @@ class RangeTableViewController: UITableViewController {
     //MARK: - UIButton Methods
     
     @IBAction func infoButtonTapped(_ sender: Any?) {
+        // If user hasn't added any gun, this message will show
         if gun?.profiles.count == 0 {
             let infoAlertController = UIAlertController(title: "Add Starting Range", message: "Zero in your scope and add that distance to scope settings", preferredStyle: .alert)
             let cancelButton = UIAlertAction(title: "Back", style: .cancel, handler: .none)
             infoAlertController.addAction(cancelButton)
             present(infoAlertController, animated: true, completion: nil)
-        } else {
+        } else { // If user has guns added, this message will show
             let infoAlertController = UIAlertController(title: "Zero in your scope before you select the desired distance", message: nil, preferredStyle: .alert)
             let cancelButton = UIAlertAction(title: "Back", style: .cancel, handler: .none)
             infoAlertController.addAction(cancelButton)
@@ -84,14 +85,6 @@ class RangeTableViewController: UITableViewController {
         reloadTableView()
     }
     
-    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        guard let gun = gun else {return}
-        let movedRange = gun.profiles.remove(at: sourceIndexPath.row)
-        gun.profiles.insert(movedRange, at: destinationIndexPath.row)
-        Gun.saveToFile(guns: guns)
-        reloadTableView()
-    }
-    
     //MARK: - UI Update Methods
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,6 +95,7 @@ class RangeTableViewController: UITableViewController {
         let indexPath = tableView.indexPathForSelectedRow
         
         tableView.reloadData()
+        // If there is more than one profile added, then user can select between the different adjustments
         if profiles.count > 1 {
             tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         }
