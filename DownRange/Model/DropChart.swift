@@ -8,17 +8,17 @@
 import Foundation
 
 //To BE Continued After MVP
-class DropChart : Codable {
+class DropChart: Codable {
     
-    var caliber : Double
-    var weight : Double
-    var muzzleVelocity : Double
-    var ballisticsCoeffcient : Double
-    var range : Double
-    var drop : Double
-    var velocity : Double
-    var energy : Double
-    var timeOfFlight : Double
+    var caliber: Double
+    var weight: Double
+    var muzzleVelocity: Double
+    var ballisticsCoeffcient: Double
+    var range: Double
+    var drop: Double
+    var velocity: Double
+    var energy: Double
+    var timeOfFlight: Double
     
     init(caliber: Double, weight: Double, muzzleVelocity: Double,ballisticsCoeffcient: Double, range: Double, drop: Double, velocity: Double, energy: Double, timeOfFlight: Double) {
         self.caliber = caliber

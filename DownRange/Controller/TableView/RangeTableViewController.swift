@@ -10,8 +10,10 @@ import UIKit
 class RangeTableViewController: UITableViewController {
     
     var gun : Gun?
-    var guns : [Gun] = []
-    var profiles : [Profile] {
+    var mc = ModelController()
+//    var mc.guns : [Gun] = []
+    
+    var profiles: [Profile] {
         guard let gun = gun else {return []}
         //gun.profiles are the Scope Settings
         return gun.profiles
@@ -19,6 +21,11 @@ class RangeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        reloadTableView()
     }
     
     //MARK: - UIButton Methods
@@ -39,17 +46,20 @@ class RangeTableViewController: UITableViewController {
     }
     
     //MARK: - Segue Methods
-    
+//
     @IBAction func unwindFromZeroDistance(_ segue: UIStoryboardSegue) {
         guard segue.source is ZeroDistanceViewController else { return }
-        Gun.saveToFile(guns: guns)
+        ModelController.saveToFile(guns: mc.guns)
         reloadTableView()
     }
     
     // MARK: - TableView DataSource
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-           let cell = tableView.dequeueReusableCell(withIdentifier: "AdjustmentCell", for: indexPath) as! MilsAdustmentTableViewCell
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AdjustmentCell", for: indexPath) as? MilsAdustmentTableViewCell
+        else { return UITableViewCell() }
+        
            let sortedProfiles = profiles.sorted(by: { $0.yards < $1.yards })
            let profile = sortedProfiles[indexPath.row]
            var selectedProfile : Profile?
@@ -64,11 +74,7 @@ class RangeTableViewController: UITableViewController {
        }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
             return profiles.count
-        } else {
-            return 1
-        }
     }
     
     //MARK: - TableView Delegate Methods
@@ -78,7 +84,7 @@ class RangeTableViewController: UITableViewController {
             gun?.profiles.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
-        Gun.saveToFile(guns: guns)
+        ModelController.saveToFile(guns: mc.guns)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -86,10 +92,6 @@ class RangeTableViewController: UITableViewController {
     }
     
     //MARK: - UI Update Methods
-    
-    override func viewWillAppear(_ animated: Bool) {
-        reloadTableView()
-    }
     
     func reloadTableView() {
         let indexPath = tableView.indexPathForSelectedRow

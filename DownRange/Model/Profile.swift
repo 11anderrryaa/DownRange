@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Profile : Codable {
+class Profile: Codable {
     var yards: Int
     var x: Double
     var y: Double

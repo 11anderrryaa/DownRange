@@ -9,22 +9,24 @@ import UIKit
 
 class GunListTableViewController: UITableViewController {
     
-    var guns: [Gun]  = []
+    var mc = ModelController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guns = Gun.loadFromFile()
-        showAlert()
+        mc.guns = ModelController.loadFromFile()
+        newUserAlert()
     }
     
     // MARK: - TableView DataSource Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return guns.count
+        return mc.guns.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GunCell", for: indexPath) as? GunTableViewCell else {fatalError("No Cell!")}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GunCell", for: indexPath) as? GunTableViewCell
+        else { return UITableViewCell() }
+        
         let gun = getGun(at: indexPath)
         cell.configure(gun: gun)
         return cell
@@ -34,19 +36,23 @@ class GunListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            guns.remove(at: indexPath.row)
+            mc.guns.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
-        Gun.saveToFile(guns: guns)
-        showAlert()
+        ModelController.saveToFile(guns: mc.guns)
+        newUserAlert()
     }
     
-    func getGun(at indexPath: IndexPath) -> Gun {
-         guns[indexPath.row]
-     }
+    //MARK: - Method to recieve guns
     
-    func showAlert() {
-        if guns.count == 0 {
+    fileprivate func getGun(at indexPath: IndexPath) -> Gun {
+        mc.guns[indexPath.row]
+    }
+    
+    //MARK: - AlertController Methods
+    
+    fileprivate func newUserAlert() {
+        if mc.guns.count == 0 {
             let infoAlertController = UIAlertController(title: "Add Rifle Name By Pushing The + Button", message: nil, preferredStyle: .alert)
             let cancelButton = UIAlertAction(title: "Close", style: .cancel, handler: .none)
             infoAlertController.addAction(cancelButton)
@@ -54,36 +60,46 @@ class GunListTableViewController: UITableViewController {
         }
     }
     
+    fileprivate func addGunAlert() {
+        let alertController = UIAlertController(title: "Enter Rifle", message: nil, preferredStyle: .alert)
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Rifle Name💥🔫"
+            textField.textAlignment = .center
+        }
+        let cancelButton = UIAlertAction(title: "Cancel", style: .destructive, handler: .none)
+        let saveButton = UIAlertAction(title: "Save", style: .default) { (alert) in
+            
+            guard
+                let textFieldArray = alertController.textFields,
+                let nameText = textFieldArray[0].text
+            else { return }
+            
+            let gun = Gun(name: nameText)
+            self.mc.guns.append(gun)
+            ModelController.saveToFile(guns: self.mc.guns)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        alertController.addAction(cancelButton)
+        alertController.addAction(saveButton)
+        present(alertController, animated: true, completion: nil)
+    }
+    
     //MARK: - Prepare For Segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "AddGun" {
-            let alertController = UIAlertController(title: "Enter Rifle", message: nil, preferredStyle: .alert)
-            alertController.addTextField { (textField) in
-                textField.placeholder = "Rifle Name💥🔫"
-                textField.textAlignment = .center
-            }
-            let cancelButton = UIAlertAction(title: "Cancel", style: .destructive, handler: .none)
-            let saveButton = UIAlertAction(title: "Save", style: .default) { (alert) in
-                guard let textFieldArray = alertController.textFields, let nameText = textFieldArray[0].text
-                else {return}
-                let gun = Gun(name: nameText)
-                self.guns.append(gun)
-                Gun.saveToFile(guns: self.guns)
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            }
-            alertController.addAction(cancelButton)
-            alertController.addAction(saveButton)
-            present(alertController, animated: true, completion: nil)
+            addGunAlert()
         }
         else if segue.identifier == "ToProfiles" {
-            guard let vc = segue.destination as? RangeTableViewController,
-                  let selectedIndexPath = tableView.indexPathForSelectedRow else
-                  {return print("error in segue")}
-            vc.gun = guns[selectedIndexPath.row]
-            vc.guns = guns
+            guard
+                let vc = segue.destination as? RangeTableViewController,
+                let selectedIndexPath = tableView.indexPathForSelectedRow
+            else { return print("error in segue") }
+            
+            vc.gun = mc.guns[selectedIndexPath.row]
+            vc.mc.guns = mc.guns
         }
     }
 }

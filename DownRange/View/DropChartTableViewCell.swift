@@ -10,7 +10,7 @@ import UIKit
 //To BE Continued After MVP
 class DropChartTableViewCell: UITableViewCell {
     
-    var dropchart : DropChart?
+    var dropchart: DropChart?
     
     @IBOutlet weak var yardsLabel: UILabel!
     @IBOutlet weak var dropLabel: UILabel!
@@ -29,12 +29,19 @@ class DropChartTableViewCell: UITableViewCell {
     //MARK: - UI Update Methods
     
     func updateChart(with dropchart: DropChart?) {
-        guard let range = dropchart?.range, let drop = dropchart?.drop, let velocity = dropchart?.velocity, let energy =  dropchart?.energy, let tof = dropchart?.timeOfFlight else {return}
+        guard
+            let range = dropchart?.range,
+            let drop = dropchart?.drop,
+            let velocity = dropchart?.velocity,
+            let energy =  dropchart?.energy,
+            let tof = dropchart?.timeOfFlight
+        else { return }
+        
         self.dropchart = dropchart
         yardsLabel.text = String(range)
         dropLabel.text =  String(drop)
         velocityLebel.text = String(velocity)
         energyLabel.text =  String(energy)
-        timeOfFlightLabel.text = String(tof
-        )}
+        timeOfFlightLabel.text = String(tof)
+    }
 }

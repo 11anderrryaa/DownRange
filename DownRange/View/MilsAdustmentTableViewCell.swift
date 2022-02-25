@@ -9,19 +9,11 @@ import UIKit
 
 class MilsAdustmentTableViewCell: UITableViewCell {
     
-    var profile : Profile?
-
+    var profile: Profile?
+    
     @IBOutlet weak var yardsButton: UIButton!
     @IBOutlet weak var upDownLabel: UILabel!
     @IBOutlet weak var leftRightLabel: UILabel!
-    
-    func updateView(with profile: Profile?, selectedProfile: Profile?) {
-        guard let yards = profile?.yards, let profileX = profile?.x, let profileY = profile?.y else {return}
-        self.profile = profile
-        yardsButton.setTitle(String(yards), for: .normal)
-        upDownLabel.text = String(profileX - (selectedProfile?.x ?? 0))
-        leftRightLabel.text = String(profileY - (selectedProfile?.y ?? 0))
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,5 +22,19 @@ class MilsAdustmentTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
+    }
+    
+    //MARK: - UI Update Methods
+    
+    func updateView(with profile: Profile?, selectedProfile: Profile?) {
+        
+        guard
+            let profile = profile,
+            let selectedProfile = selectedProfile
+        else { return }
+        
+        yardsButton.setTitle("\(profile.yards)", for: .normal)
+        upDownLabel.text = String(profile.x - selectedProfile.x)
+        leftRightLabel.text = String(profile.y - selectedProfile.y)
     }
 }
