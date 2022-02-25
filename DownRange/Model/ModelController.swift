@@ -9,12 +9,16 @@ import Foundation
 
 class ModelController {
     
+//    Debuggy: Advice was to serparate the source of truth into a ModelController
+    
     var gun: Gun?
     var guns: [Gun]  = []
-    var profiles: [Profile] {
-        guard let gun = gun else { return []}
-        return gun.profiles
-    }
+    
+//    Debuggy: should I also try to serparate this from the RangeViewController?
+//    var profiles: [Profile] {
+//        guard let gun = gun else { return []}
+//        return gun.profiles
+//    }
     
     static func saveToFile(guns: [Gun]) {
         let propertyListEncoder = PropertyListEncoder()

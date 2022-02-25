@@ -18,12 +18,7 @@ class MilsAdustmentTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-    }
-    
+
     //MARK: - UI Update Methods
     
     func updateView(with profile: Profile?, selectedProfile: Profile?) {

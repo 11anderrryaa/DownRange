@@ -11,8 +11,6 @@ class RangeTableViewController: UITableViewController {
     
     var gun : Gun?
     var mc = ModelController()
-//    var mc.guns : [Gun] = []
-    
     var profiles: [Profile] {
         guard let gun = gun else {return []}
         //gun.profiles are the Scope Settings
@@ -21,6 +19,7 @@ class RangeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        reloadTableView()
         
     }
     
@@ -63,9 +62,11 @@ class RangeTableViewController: UITableViewController {
            let sortedProfiles = profiles.sorted(by: { $0.yards < $1.yards })
            let profile = sortedProfiles[indexPath.row]
            var selectedProfile : Profile?
-           
+
+//        Debuggy: rows wont load with data unless a row is selected trigger this block
            if let indexPath = tableView.indexPathForSelectedRow {
                selectedProfile = sortedProfiles[indexPath.row]
+               print(selectedProfile, "Debuggy")
            }
            cell.updateView(with: profile, selectedProfile: selectedProfile)
            cell.yardsButton.titleLabel?.text = "???"

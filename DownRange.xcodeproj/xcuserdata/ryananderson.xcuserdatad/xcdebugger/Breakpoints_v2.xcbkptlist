@@ -244,5 +244,85 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C24226EA-84EA-4BC1-B3F6-ED4E70A07D8A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DownRange/Controller/TableView/RangeTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "07A3AF1F-36D4-4DB6-BAE4-8288AB573E29"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DownRange/Controller/TableView/RangeTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "78F4068B-1874-4BD8-89C5-31DF1328DB37"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DownRange/View/MilsAdustmentTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "MilsAdustmentTableViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "78F4068B-1874-4BD8-89C5-31DF1328DB37 - aed2c109d4613210"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DownRange.MilsAdustmentTableViewCell.updateView(with: Swift.Optional&lt;DownRange.Profile&gt;, selectedProfile: Swift.Optional&lt;DownRange.Profile&gt;) -&gt; ()"
+                  moduleName = "DownRange"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ryananderson/Desktop/DownRange/DownRange/View/MilsAdustmentTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "141">
+               </Location>
+               <Location
+                  uuid = "78F4068B-1874-4BD8-89C5-31DF1328DB37 - aed2c109d4613210"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DownRange.MilsAdustmentTableViewCell.updateView(with: Swift.Optional&lt;DownRange.Profile&gt;, selectedProfile: Swift.Optional&lt;DownRange.Profile&gt;) -&gt; ()"
+                  moduleName = "DownRange"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ryananderson/Desktop/DownRange/DownRange/View/MilsAdustmentTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "166">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
