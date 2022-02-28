@@ -59,14 +59,16 @@ class RangeTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AdjustmentCell", for: indexPath) as? MilsAdustmentTableViewCell
         else { return UITableViewCell() }
         
+
            let sortedProfiles = profiles.sorted(by: { $0.yards < $1.yards })
            let profile = sortedProfiles[indexPath.row]
            var selectedProfile : Profile?
 
-//        Debuggy: rows wont load with data unless a row is selected trigger this block
            if let indexPath = tableView.indexPathForSelectedRow {
                selectedProfile = sortedProfiles[indexPath.row]
-               print(selectedProfile, "Debuggy")
+//        print(selectedProfile.x, "Debuggy")
+           } else {
+               selectedProfile = Profile(yards: 0, x: 0, y: 0)
            }
            cell.updateView(with: profile, selectedProfile: selectedProfile)
            cell.yardsButton.titleLabel?.text = "???"
