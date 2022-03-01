@@ -24,7 +24,7 @@ class GunListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GunCell", for: indexPath) as? GunTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as? GunTableViewCell
         else { return UITableViewCell() }
         
         let gun = getGun(at: indexPath)
@@ -53,21 +53,21 @@ class GunListTableViewController: UITableViewController {
     
     fileprivate func newUserAlert() {
         if mc.guns.count == 0 {
-            let infoAlertController = UIAlertController(title: "Add Rifle Name By Pushing The + Button", message: nil, preferredStyle: .alert)
-            let cancelButton = UIAlertAction(title: "Close", style: .cancel, handler: .none)
+            let infoAlertController = UIAlertController(title: K.Alert.newTitle, message: nil, preferredStyle: .alert)
+            let cancelButton = UIAlertAction(title: K.Alert.cancel, style: .cancel, handler: .none)
             infoAlertController.addAction(cancelButton)
             present(infoAlertController, animated: true, completion: nil)
         }
     }
     
     fileprivate func addGunAlert() {
-        let alertController = UIAlertController(title: "Enter Rifle", message: nil, preferredStyle: .alert)
+        let alertController = UIAlertController(title: K.Alert.addGunTitle, message: nil, preferredStyle: .alert)
         alertController.addTextField { (textField) in
-            textField.placeholder = "Rifle Name💥🔫"
+            textField.placeholder = K.Alert.placeholder
             textField.textAlignment = .center
         }
-        let cancelButton = UIAlertAction(title: "Cancel", style: .destructive, handler: .none)
-        let saveButton = UIAlertAction(title: "Save", style: .default) { (alert) in
+        let cancelButton = UIAlertAction(title: K.Alert.cancel, style: .destructive, handler: .none)
+        let saveButton = UIAlertAction(title: K.Alert.save, style: .default) { (alert) in
             
             guard
                 let textFieldArray = alertController.textFields,
@@ -89,10 +89,10 @@ class GunListTableViewController: UITableViewController {
     //MARK: - Prepare For Segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        if segue.identifier == "AddGun" {
+        if segue.identifier == K.addSegue {
             addGunAlert()
         }
-        else if segue.identifier == "ToProfiles" {
+        else if segue.identifier == K.profileSegue {
             guard
                 let vc = segue.destination as? RangeTableViewController,
                 let selectedIndexPath = tableView.indexPathForSelectedRow

@@ -18,6 +18,7 @@
 		8358DBE92592534A005C8F83 /* RangeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8358DBE82592534A005C8F83 /* RangeTableViewController.swift */; };
 		8358DBF225939578005C8F83 /* GunTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8358DBF125939578005C8F83 /* GunTableViewCell.swift */; };
 		835F642C27CD225500EF2A81 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F642B27CD225500EF2A81 /* ProfileController.swift */; };
+		835F642E27CE7A0900EF2A81 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F642D27CE7A0900EF2A81 /* K.swift */; };
 		83859B9825C85A370073D775 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83859B9725C85A370073D775 /* Assets.xcassets */; };
 		83859B9D25D2E1410073D775 /* DropChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83859B9C25D2E1410073D775 /* DropChartTableViewCell.swift */; };
 		83859BA225D2E1580073D775 /* DropChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83859BA125D2E1580073D775 /* DropChart.swift */; };
@@ -62,6 +63,7 @@
 		8358DBE82592534A005C8F83 /* RangeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeTableViewController.swift; sourceTree = "<group>"; };
 		8358DBF125939578005C8F83 /* GunTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GunTableViewCell.swift; sourceTree = "<group>"; };
 		835F642B27CD225500EF2A81 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		835F642D27CE7A0900EF2A81 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		83859B9725C85A370073D775 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83859B9C25D2E1410073D775 /* DropChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropChartTableViewCell.swift; sourceTree = "<group>"; };
 		83859BA125D2E1580073D775 /* DropChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropChart.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				83859BA125D2E1580073D775 /* DropChart.swift */,
 				83BD8BA327C89FBE0062DFAC /* GunController.swift */,
 				835F642B27CD225500EF2A81 /* ProfileController.swift */,
+				835F642D27CE7A0900EF2A81 /* K.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				83BDFB8625A36C8E000840FD /* ZeroDistanceViewController.swift in Sources */,
 				8358DBE92592534A005C8F83 /* RangeTableViewController.swift in Sources */,
 				8358DBDC25924DCA005C8F83 /* Profile.swift in Sources */,
+				835F642E27CE7A0900EF2A81 /* K.swift in Sources */,
 				83859B9D25D2E1410073D775 /* DropChartTableViewCell.swift in Sources */,
 				8358DBA1259240FC005C8F83 /* AppDelegate.swift in Sources */,
 				8358DBF225939578005C8F83 /* GunTableViewCell.swift in Sources */,

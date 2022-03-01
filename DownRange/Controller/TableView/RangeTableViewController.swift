@@ -24,18 +24,12 @@ class RangeTableViewController: UITableViewController {
     @IBAction func infoButtonTapped(_ sender: Any?) {
         // If user hasn't added any gun, this message will show
         if gun?.profiles.count == 0 {
-            let infoAlertController = UIAlertController(title: "Add Starting Range", message: "Zero in your scope and add that distance to scope settings", preferredStyle: .alert)
-            let cancelButton = UIAlertAction(title: "Back", style: .cancel, handler: .none)
-            infoAlertController.addAction(cancelButton)
-            present(infoAlertController, animated: true, completion: nil)
+            showAlert(title: K.Alert.addDataTitle, message: K.Alert.addDatamessage)
         } else { // If user has guns added, this message will show
-            let infoAlertController = UIAlertController(title: "Zero in your scope before you select the desired distance", message: nil, preferredStyle: .alert)
-            let cancelButton = UIAlertAction(title: "Back", style: .cancel, handler: .none)
-            infoAlertController.addAction(cancelButton)
-            present(infoAlertController, animated: true, completion: nil)
+            showAlert(title: K.Alert.useDataTitle, message: "")
         }
     }
-    
+
     //MARK: - Segue Methods
 
     @IBAction func unwindFromZeroDistance(_ segue: UIStoryboardSegue) {
@@ -48,7 +42,7 @@ class RangeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AdjustmentCell", for: indexPath) as? MilsAdustmentTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as? MilsAdustmentTableViewCell
         else { return UITableViewCell() }
         
 
@@ -98,7 +92,18 @@ class RangeTableViewController: UITableViewController {
         }
     }
     
+    //MARK: - Update Data Methods
+    
     func updateData() {
         profileController.profiles = profileController.fetchProfiles(from: gun)
+    }
+    
+    //MARK: - AlertController Methods
+    
+    func showAlert(title: String, message: String) {
+        let infoController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancelButton = UIAlertAction(title: K.Alert.cancel, style: .cancel, handler: .none)
+        infoController.addAction(cancelButton)
+        present(infoController, animated: true, completion: nil)
     }
 }

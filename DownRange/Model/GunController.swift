@@ -39,4 +39,5 @@ class GunController {
     
     static let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     static let archiveURL = documentsDirectory.appendingPathComponent("Gun").appendingPathExtension("plist")
+    
 }
