@@ -9,11 +9,11 @@ import UIKit
 
 class GunListTableViewController: UITableViewController {
     
-    var mc = ModelController()
+    var mc = GunController.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mc.guns = ModelController.loadFromFile()
+        mc.guns = GunController.loadFromFile()
         newUserAlert()
     }
     
@@ -39,7 +39,7 @@ class GunListTableViewController: UITableViewController {
             mc.guns.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
-        ModelController.saveToFile(guns: mc.guns)
+        GunController.saveToFile(guns: mc.guns)
         newUserAlert()
     }
     
@@ -76,7 +76,7 @@ class GunListTableViewController: UITableViewController {
             
             let gun = Gun(name: nameText)
             self.mc.guns.append(gun)
-            ModelController.saveToFile(guns: self.mc.guns)
+            GunController.saveToFile(guns: self.mc.guns)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -99,7 +99,7 @@ class GunListTableViewController: UITableViewController {
             else { return print("error in segue") }
             
             vc.gun = mc.guns[selectedIndexPath.row]
-            vc.mc.guns = mc.guns
+            vc.gunController.guns = mc.guns
         }
     }
 }

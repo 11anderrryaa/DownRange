@@ -67,7 +67,7 @@ class GunListCollectionViewController: UICollectionViewController {
                 else {return}
                 let gun = Gun(name: nameText)
                 self.guns.append(gun)
-                ModelController.saveToFile(guns: self.guns)
+                GunController.saveToFile(guns: self.guns)
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }

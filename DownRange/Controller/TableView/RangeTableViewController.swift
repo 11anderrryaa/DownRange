@@ -10,23 +10,15 @@ import UIKit
 class RangeTableViewController: UITableViewController {
     
     var gun : Gun?
-    var mc = ModelController()
-    var profiles: [Profile] {
-        guard let gun = gun else {return []}
-        //gun.profiles are the Scope Settings
-        return gun.profiles
-    }
+    var gunController = GunController.shared
+    var profileController = ProfileController.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        reloadTableView()
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
         reloadTableView()
     }
-    
+
     //MARK: - UIButton Methods
     
     @IBAction func infoButtonTapped(_ sender: Any?) {
@@ -45,10 +37,10 @@ class RangeTableViewController: UITableViewController {
     }
     
     //MARK: - Segue Methods
-//
+
     @IBAction func unwindFromZeroDistance(_ segue: UIStoryboardSegue) {
         guard segue.source is ZeroDistanceViewController else { return }
-        ModelController.saveToFile(guns: mc.guns)
+        GunController.saveToFile(guns: gunController.guns)
         reloadTableView()
     }
     
@@ -60,24 +52,22 @@ class RangeTableViewController: UITableViewController {
         else { return UITableViewCell() }
         
 
-           let sortedProfiles = profiles.sorted(by: { $0.yards < $1.yards })
+        let sortedProfiles = profileController.profiles.sorted(by: { $0.yards < $1.yards })
            let profile = sortedProfiles[indexPath.row]
            var selectedProfile : Profile?
 
            if let indexPath = tableView.indexPathForSelectedRow {
                selectedProfile = sortedProfiles[indexPath.row]
-//        print(selectedProfile.x, "Debuggy")
            } else {
                selectedProfile = Profile(yards: 0, x: 0, y: 0)
            }
            cell.updateView(with: profile, selectedProfile: selectedProfile)
-           cell.yardsButton.titleLabel?.text = "???"
-           cell.yardsButton.title(for: .normal)
+
            return cell
        }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return profiles.count
+        return profileController.profiles.count
     }
     
     //MARK: - TableView Delegate Methods
@@ -85,9 +75,10 @@ class RangeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             gun?.profiles.remove(at: indexPath.row)
+            updateData()
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
-        ModelController.saveToFile(guns: mc.guns)
+        GunController.saveToFile(guns: gunController.guns)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -98,11 +89,16 @@ class RangeTableViewController: UITableViewController {
     
     func reloadTableView() {
         let indexPath = tableView.indexPathForSelectedRow
-        
+      updateData()
         tableView.reloadData()
         // If there is more than one profile added, then user can select between the different adjustments
-        if profiles.count > 1 {
+        if profileController.profiles.count > 1
+        {
             tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         }
+    }
+    
+    func updateData() {
+        profileController.profiles = profileController.fetchProfiles(from: gun)
     }
 }

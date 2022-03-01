@@ -7,9 +7,11 @@
 
 import Foundation
 
-class ModelController {
+class GunController {
     
 //    Debuggy: Advice was to serparate the source of truth into a ModelController
+    private init() {}
+    static let shared = GunController()
     
     var gun: Gun?
     var guns: [Gun]  = []
