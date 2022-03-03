@@ -14,10 +14,12 @@ class GunTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    //MARK: - Confirgure Cell Method
     
     func configure(gun: Gun){
         gunName.text = gun.name

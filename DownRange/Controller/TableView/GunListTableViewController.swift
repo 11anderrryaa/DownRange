@@ -9,18 +9,18 @@ import UIKit
 
 class GunListTableViewController: UITableViewController {
     
-    var mc = GunController.shared
+    var gc = GunController.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mc.guns = GunController.loadFromFile()
+        gc.guns = GunController.loadFromFile()
         newUserAlert()
     }
     
     // MARK: - TableView DataSource Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mc.guns.count
+        return gc.guns.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -36,23 +36,23 @@ class GunListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            mc.guns.remove(at: indexPath.row)
+            gc.guns.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
-        GunController.saveToFile(guns: mc.guns)
+        GunController.saveToFile(guns: gc.guns)
         newUserAlert()
     }
     
     //MARK: - Method to recieve guns
     
     fileprivate func getGun(at indexPath: IndexPath) -> Gun {
-        mc.guns[indexPath.row]
+        gc.guns[indexPath.row]
     }
     
     //MARK: - AlertController Methods
     
     fileprivate func newUserAlert() {
-        if mc.guns.count == 0 {
+        if gc.guns.count == 0 {
             let infoAlertController = UIAlertController(title: K.Alert.newTitle, message: nil, preferredStyle: .alert)
             let cancelButton = UIAlertAction(title: K.Alert.cancel, style: .cancel, handler: .none)
             infoAlertController.addAction(cancelButton)
@@ -75,8 +75,8 @@ class GunListTableViewController: UITableViewController {
             else { return }
             
             let gun = Gun(name: nameText)
-            self.mc.guns.append(gun)
-            GunController.saveToFile(guns: self.mc.guns)
+            self.gc.guns.append(gun)
+            GunController.saveToFile(guns: self.gc.guns)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -98,8 +98,8 @@ class GunListTableViewController: UITableViewController {
                 let selectedIndexPath = tableView.indexPathForSelectedRow
             else { return print("error in segue") }
             
-            vc.gun = mc.guns[selectedIndexPath.row]
-            vc.gunController.guns = mc.guns
+            vc.gun = gc.guns[selectedIndexPath.row]
+            vc.gunController.guns = gc.guns
         }
     }
 }
