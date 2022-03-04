@@ -13,11 +13,13 @@
         <!--Rifles-->
         <scene sceneID="3lQ-lF-Enw">
             <objects>
-                <tableViewController interfaceStyle="dark" id="Bx5-od-xla" customClass="GunListTableViewController" customModule="DownRange" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Bx5-od-xla" customClass="GunListTableViewController" customModule="DownRange" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5Xw-sr-Ym9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="separatorColor" name="2ndAccentColor"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" id="TTp-ux-ix2" customClass="GunTableViewCell" customModule="DownRange" customModuleProvider="target">
@@ -30,7 +32,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgy-mQ-8k3">
                                             <rect key="frame" x="20" y="12" width="374" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" name="2ndAccentColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -40,6 +42,7 @@
                                         <constraint firstItem="Zgy-mQ-8k3" firstAttribute="leading" secondItem="Fxj-iC-45H" secondAttribute="leading" constant="20" symbolic="YES" id="aFn-W8-omT"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="gunName" destination="Zgy-mQ-8k3" id="ksG-6o-ahc"/>
                                     <segue destination="O0Z-ag-f2z" kind="show" identifier="ToProfiles" id="bRF-Wl-Hk6"/>
@@ -52,7 +55,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Rifles" id="7b7-CC-yPS" colorLabel="IBBuiltInLabel-Orange">
+                        <barButtonItem key="backBarButtonItem" title="Back to Rifles" id="k9C-0X-aQk"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="x9A-IX-vch">
+                            <color key="tintColor" name="2ndAccentColor"/>
                             <connections>
                                 <segue destination="O0Z-ag-f2z" kind="show" identifier="AddGun" id="LE2-HQ-jqC"/>
                             </connections>
@@ -235,7 +240,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Distance in Yards" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pXl-hY-aM9">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                         <connections>
                                             <action selector="textEditingChanged:" destination="aZl-LD-kAR" eventType="editingDidEnd" id="ldz-Ro-dRy"/>
                                         </connections>
@@ -243,7 +248,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Down/Up" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9i4-zN-82h">
                                         <rect key="frame" x="0.0" y="100" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                         <connections>
                                             <action selector="textEditingChanged:" destination="aZl-LD-kAR" eventType="editingDidEnd" id="bD3-gA-XBP"/>
                                         </connections>
@@ -251,7 +256,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Left/Right" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ABj-0x-df0">
                                         <rect key="frame" x="0.0" y="200" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                         <connections>
                                             <action selector="textEditingChanged:" destination="aZl-LD-kAR" eventType="editingDidEnd" id="YXn-03-qdW"/>
                                         </connections>
@@ -315,11 +320,15 @@
         <!--Navigation Controller-->
         <scene sceneID="ogd-pL-nkL">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bjd-pE-fgk" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" interfaceStyle="dark" id="bjd-pE-fgk" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IM7-5u-1cC">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.47056877609999997" green="0.58431726689999997" blue="0.4862772226" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.47056877609999997" green="0.58431726689999997" blue="0.4862772226" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

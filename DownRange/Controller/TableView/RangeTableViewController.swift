@@ -111,6 +111,7 @@ class RangeTableViewController: UITableViewController {
             infoController.addTextField { (textField) in
                 textField.placeholder = K.Alert.firstTimePlaceholder
                 textField.textAlignment = .center
+                textField.keyboardType = .decimalPad
             }
             let saveButton = UIAlertAction(title: K.Alert.save, style: .default) { (alert) in
     

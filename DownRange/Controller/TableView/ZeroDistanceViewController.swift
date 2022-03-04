@@ -19,6 +19,7 @@ class ZeroDistanceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         saveButton.isEnabled = false
+        
     }
     
     //MARK: - Methods for UIButtons
