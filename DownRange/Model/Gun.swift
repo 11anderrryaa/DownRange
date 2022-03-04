@@ -8,6 +8,7 @@
 import Foundation
 
 class Gun: Codable {
+    
     var name: String
     var profiles: [Profile] = []
     var dropChart: [DropChart] = []

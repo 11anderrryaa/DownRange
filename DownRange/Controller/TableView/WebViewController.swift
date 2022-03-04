@@ -14,7 +14,7 @@ class WebViewController: UIViewController, WKUIDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let myURL = URL(string: "https://lrbc.vortexoptics.com/#!/")
+        let myURL = URL(string: K.URL.vortexURL)
         let myRequest = URLRequest(url: myURL!)
         webview.load(myRequest)
     }

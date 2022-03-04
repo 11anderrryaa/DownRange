@@ -4,16 +4,16 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Rifles-->
         <scene sceneID="3lQ-lF-Enw">
             <objects>
-                <tableViewController id="Bx5-od-xla" customClass="GunListTableViewController" customModule="DownRange" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController interfaceStyle="dark" id="Bx5-od-xla" customClass="GunListTableViewController" customModule="DownRange" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5Xw-sr-Ym9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" id="TTp-ux-ix2" customClass="GunTableViewCell" customModule="DownRange" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TTp-ux-ix2" id="Fxj-iC-45H">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -80,20 +80,20 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYa-rI-pdY">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="44"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                            <color key="textColor" name="2ndAccentColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Up/Down" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rb6-Kb-j4P">
                                             <rect key="frame" x="157" y="0.0" width="100" height="44"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="textColor" name="2ndAccentColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left/Right" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFz-lR-G2r">
                                             <rect key="frame" x="314" y="0.0" width="100" height="44"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="textColor" name="2ndAccentColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -107,35 +107,35 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReusableCell" rowHeight="50" id="eLd-KL-0rG" customClass="MilsAdustmentTableViewCell" customModule="DownRange" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88.5" width="414" height="50"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReusableCell" rowHeight="70" id="eLd-KL-0rG" customClass="MilsAdustmentTableViewCell" customModule="DownRange" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="94" width="414" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eLd-KL-0rG" id="QDp-Hq-mc1">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="Nu5-th-kZM">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IL0-Y7-Zs4">
-                                                    <rect key="frame" x="0.0" y="0.0" width="98.5" height="50"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="98.5" height="70"/>
                                                     <state key="normal">
-                                                        <color key="titleColor" systemColor="tintColor"/>
+                                                        <color key="titleColor" name="2ndAccentColor"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="yardsButtonTapped:" destination="eLd-KL-0rG" eventType="touchUpInside" id="S19-O9-MjT"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1V-OZ-3ba">
-                                                    <rect key="frame" x="157.5" y="0.0" width="99" height="50"/>
+                                                    <rect key="frame" x="157.5" y="0.0" width="99" height="70"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" name="2ndAccentColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puc-iO-JuQ">
-                                                    <rect key="frame" x="315.5" y="0.0" width="98.5" height="50"/>
+                                                    <rect key="frame" x="315.5" y="0.0" width="98.5" height="70"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" name="2ndAccentColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -148,6 +148,7 @@
                                         <constraint firstItem="Nu5-th-kZM" firstAttribute="top" secondItem="QDp-Hq-mc1" secondAttribute="top" id="tSD-o8-tpt"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="leftRightLabel" destination="puc-iO-JuQ" id="T1n-JB-dJN"/>
                                     <outlet property="upDownLabel" destination="V1V-OZ-3ba" id="fqV-Xx-iWg"/>
@@ -165,17 +166,20 @@
                         <nil key="title"/>
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="plus" catalog="system" id="RjL-jH-Qjm">
+                                <color key="tintColor" name="2ndAccentColor"/>
                                 <connections>
                                     <action selector="addYards:" destination="O0Z-ag-f2z" id="yce-K3-8Cm"/>
                                     <segue destination="paD-9Q-cpA" kind="presentation" identifier="AddZeroDistance" id="pAF-2I-loR"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="info.circle" catalog="system" id="vvP-eh-k7R">
+                                <color key="tintColor" name="2ndAccentColor"/>
                                 <connections>
                                     <action selector="infoButtonTapped:" destination="O0Z-ag-f2z" id="tRL-0B-yyW"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="safari" catalog="system" id="Bo8-fi-iYu">
+                                <color key="tintColor" name="2ndAccentColor"/>
                                 <connections>
                                     <segue destination="UVq-Mm-HyU" kind="popoverPresentation" popoverAnchorBarButtonItem="Bo8-fi-iYu" id="aq1-5b-ybX">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -189,64 +193,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXa-r7-R7c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1734.7826086956522" y="75.669642857142847"/>
-        </scene>
-        <!--Rifles-->
-        <scene sceneID="Pd5-ET-VU8">
-            <objects>
-                <collectionViewController id="PVI-Ix-KoH" customClass="GunListCollectionViewController" customModule="DownRange" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="zvo-34-ykH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lwy-Pm-Ea8">
-                            <size key="itemSize" width="210" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="8T9-cM-l44" customClass="GunCollectionViewCell" customModule="DownRange" customModuleProvider="target">
-                                <rect key="frame" x="102" y="0.0" width="210" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="o9u-no-wjz" customClass="GunCollectionViewCell" customModule="DownRange" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="210" height="128"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1md-ep-po3">
-                                            <rect key="frame" x="84" y="53.5" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="1md-ep-po3" firstAttribute="centerX" secondItem="o9u-no-wjz" secondAttribute="centerX" id="Yi3-JC-Yk0"/>
-                                        <constraint firstItem="1md-ep-po3" firstAttribute="centerY" secondItem="o9u-no-wjz" secondAttribute="centerY" id="djK-Q7-jzu"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
-                                <size key="customSize" width="210" height="128"/>
-                                <connections>
-                                    <outlet property="gunName" destination="1md-ep-po3" id="d4V-ly-jm2"/>
-                                    <segue destination="O0Z-ag-f2z" kind="show" identifier="ToProfiles" id="YwQ-7c-c1P"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="PVI-Ix-KoH" id="eBE-X1-WNi"/>
-                            <outlet property="delegate" destination="PVI-Ix-KoH" id="gt5-Nh-jtp"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" title="Rifles" id="iAG-YE-gM4">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="VLZ-Xq-2HZ">
-                            <connections>
-                                <segue destination="O0Z-ag-f2z" kind="show" identifier="AddGun" id="Uwr-mb-raO"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u9N-FX-fNL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="718.84057971014499" y="758.70535714285711"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="d55-yR-v8E">
@@ -341,11 +287,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="3Qf-Xo-DNF">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="info.circle" catalog="system" id="8EK-ZR-dyw">
+                            <color key="tintColor" name="2ndAccentColor"/>
                             <connections>
                                 <action selector="infoButtonTapped:" destination="aZl-LD-kAR" id="L9i-Ig-yhi"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="fxC-qS-3Bx">
+                            <color key="tintColor" name="2ndAccentColor"/>
                             <connections>
                                 <action selector="saveButtonTapped:" destination="aZl-LD-kAR" id="63w-Bv-hw9"/>
                                 <segue destination="SbQ-Mu-Gp8" kind="unwind" unwindAction="unwindFromZeroDistance:" id="bh2-Qs-TLy"/>
@@ -400,24 +348,6 @@
             </objects>
             <point key="canvasLocation" x="2576.811594202899" y="75.669642857142847"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="yBO-ad-7Gv">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jc6-Ue-gLX" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="n4f-CJ-PaJ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="PVI-Ix-KoH" kind="relationship" relationship="rootViewController" id="zlZ-Rq-3QU"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MnJ-v0-fvR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-191" y="759"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="bRF-Wl-Hk6"/>
@@ -426,11 +356,11 @@
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="safari" catalog="system" width="128" height="121"/>
+        <namedColor name="2ndAccentColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

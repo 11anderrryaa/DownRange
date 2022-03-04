@@ -24,10 +24,14 @@ struct K {
         static let useDataTitle = " Zero in you scope before you select the desired distance"
         static let howToTitle = "Enter in the new distance in yards."
         static let howToMessage = "Based off the shortest distance you zero'd in at, enter in the different below. (Down/Up) = (-/+)  (Left/Right) = (-/+)"
-        static let firstTimeTitle = "Add Yards"
-        static let firstTimeMessage = "Add where you are zero'd in at"
+        static let firstTimeTitle = "Where are you Zeroed in at?"
+        static let firstTimeMessage = ""
         static let firstTimePlaceholder = "Distance in Yards"
         static let cancel = "Cancel"
         static let save = "Save"
+    }
+    
+    struct URL {
+        static let vortexURL = "https://lrbc.vortexoptics.com/#!/"
     }
 }

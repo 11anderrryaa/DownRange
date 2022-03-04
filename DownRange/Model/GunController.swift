@@ -9,18 +9,11 @@ import Foundation
 
 class GunController {
     
-//    Debuggy: Advice was to serparate the source of truth into a ModelController
     private init() {}
     static let shared = GunController()
     
     var gun: Gun?
     var guns: [Gun]  = []
-    
-//    Debuggy: should I also try to serparate this from the RangeViewController?
-//    var profiles: [Profile] {
-//        guard let gun = gun else { return []}
-//        return gun.profiles
-//    }
     
     static func saveToFile(guns: [Gun]) {
         let propertyListEncoder = PropertyListEncoder()
@@ -39,5 +32,4 @@ class GunController {
     
     static let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     static let archiveURL = documentsDirectory.appendingPathComponent("Gun").appendingPathExtension("plist")
-    
 }
