@@ -67,8 +67,6 @@ class GunListTableViewController: UITableViewController {
         alertController.addTextField { (textField) in
             textField.placeholder = K.Alert.placeholder
 
-//            let keyboard: UIKeyboardType
-//            keyboard = .decimalPad
         }
         let cancelButton = UIAlertAction(title: K.Alert.cancel, style: .destructive, handler: .none)
         let saveButton = UIAlertAction(title: K.Alert.save, style: .default) { (alert) in

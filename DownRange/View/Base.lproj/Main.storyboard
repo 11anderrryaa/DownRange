@@ -23,7 +23,7 @@
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" id="TTp-ux-ix2" customClass="GunTableViewCell" customModule="DownRange" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TTp-ux-ix2" id="Fxj-iC-45H">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -111,9 +111,43 @@
                                 <constraint firstAttribute="bottom" secondItem="Gm9-fA-4nK" secondAttribute="bottom" id="ucW-Rr-3dp"/>
                             </constraints>
                         </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="2zo-gL-eXR">
+                            <rect key="frame" x="0.0" y="181" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDF-wf-oAi">
+                                    <rect key="frame" x="20" y="6.5" width="374" height="31"/>
+                                    <color key="backgroundColor" red="0.47056877609999997" green="0.58431726689999997" blue="0.4862772226" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <buttonConfiguration key="configuration" style="plain">
+                                        <attributedString key="attributedTitle">
+                                            <fragment content="DropChart Link">
+                                                <attributes>
+                                                    <font key="NSFont" size="12" name="Georgia-Italic"/>
+                                                    <font key="NSOriginalFont" size="16" name="Georgia-Italic"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <segue destination="UVq-Mm-HyU" kind="popoverPresentation" popoverAnchorView="VDF-wf-oAi" id="VaX-i1-iGZ">
+                                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                        </segue>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="VDF-wf-oAi" firstAttribute="centerY" secondItem="2zo-gL-eXR" secondAttribute="centerY" id="0zf-1X-WVt"/>
+                                <constraint firstItem="VDF-wf-oAi" firstAttribute="leading" secondItem="2zo-gL-eXR" secondAttribute="leading" constant="20" id="EmU-I2-dHk"/>
+                                <constraint firstItem="VDF-wf-oAi" firstAttribute="centerX" secondItem="2zo-gL-eXR" secondAttribute="centerX" id="ks3-kU-eV8"/>
+                                <constraint firstAttribute="trailing" secondItem="VDF-wf-oAi" secondAttribute="trailing" constant="20" id="lw2-8V-na2"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReusableCell" rowHeight="70" id="eLd-KL-0rG" customClass="MilsAdustmentTableViewCell" customModule="DownRange" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="94" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="88.5" width="414" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eLd-KL-0rG" id="QDp-Hq-mc1">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -124,20 +158,20 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IL0-Y7-Zs4">
                                                     <rect key="frame" x="0.0" y="0.0" width="98.5" height="70"/>
-                                                    <state key="normal">
+                                                    <state key="normal" title="Yards">
                                                         <color key="titleColor" name="2ndAccentColor"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="yardsButtonTapped:" destination="eLd-KL-0rG" eventType="touchUpInside" id="S19-O9-MjT"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1V-OZ-3ba">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-/+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1V-OZ-3ba">
                                                     <rect key="frame" x="157.5" y="0.0" width="99" height="70"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="2ndAccentColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puc-iO-JuQ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-/+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puc-iO-JuQ">
                                                     <rect key="frame" x="315.5" y="0.0" width="98.5" height="70"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="2ndAccentColor"/>
@@ -183,14 +217,6 @@
                                     <action selector="infoButtonTapped:" destination="O0Z-ag-f2z" id="tRL-0B-yyW"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="safari" catalog="system" id="Bo8-fi-iYu">
-                                <color key="tintColor" name="2ndAccentColor"/>
-                                <connections>
-                                    <segue destination="UVq-Mm-HyU" kind="popoverPresentation" popoverAnchorBarButtonItem="Bo8-fi-iYu" id="aq1-5b-ybX">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -224,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3F8-gA-6zx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2644.9275362318845" y="784.82142857142856"/>
+            <point key="canvasLocation" x="1735" y="846"/>
         </scene>
         <!--Zero Distance View Controller-->
         <scene sceneID="5yy-jl-aIE">
@@ -240,7 +266,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Distance in Yards" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pXl-hY-aM9">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         <connections>
                                             <action selector="textEditingChanged:" destination="aZl-LD-kAR" eventType="editingDidEnd" id="ldz-Ro-dRy"/>
                                         </connections>
@@ -364,7 +390,6 @@
     <resources>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <image name="safari" catalog="system" width="128" height="121"/>
         <namedColor name="2ndAccentColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
