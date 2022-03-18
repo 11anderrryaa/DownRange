@@ -114,7 +114,7 @@ class RangeTableViewController: UITableViewController {
                 textField.keyboardType = .numberPad
             }
             let saveButton = UIAlertAction(title: K.Alert.save, style: .default) { (alert) in
-    
+                
                 guard
                     let textfieldArray = infoController.textFields,
                     let yardText = Int(textfieldArray[0].text ?? "0")

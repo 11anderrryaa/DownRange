@@ -15,8 +15,6 @@ class GunTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    
-    
     //MARK: - Confirgure Cell Methods
     
     func configure(gun: Gun){
