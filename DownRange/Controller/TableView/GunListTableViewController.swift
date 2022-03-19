@@ -11,12 +11,11 @@ class GunListTableViewController: UITableViewController {
     
     var gc = GunController.shared
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         gc.guns = GunController.loadFromFile()
         newUserAlert()
-
+        
     }
     
     // MARK: - TableView DataSource Methods
@@ -66,7 +65,7 @@ class GunListTableViewController: UITableViewController {
         let alertController = UIAlertController(title: K.Alert.addGunTitle, message: nil, preferredStyle: .alert)
         alertController.addTextField { (textField) in
             textField.placeholder = K.Alert.placeholder
-
+            
         }
         let cancelButton = UIAlertAction(title: K.Alert.cancel, style: .destructive, handler: .none)
         let saveButton = UIAlertAction(title: K.Alert.save, style: .default) { (alert) in

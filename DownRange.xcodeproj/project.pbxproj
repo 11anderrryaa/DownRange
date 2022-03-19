@@ -26,6 +26,7 @@
 		83BDFB8625A36C8E000840FD /* ZeroDistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BDFB8525A36C8E000840FD /* ZeroDistanceViewController.swift */; };
 		83DF78D425A4B68100EF0B36 /* MilsAdustmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF78D325A4B68100EF0B36 /* MilsAdustmentTableViewCell.swift */; };
 		83ECB0EF273D7896001F61FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83ECB0EE273D7896001F61FA /* LaunchScreen.storyboard */; };
+		9024E1D393C21EE1EC470635 /* Pods_DownRange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6B8EA0CE62265A9D06FEB1 /* Pods_DownRange.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		123AEC54B420E5D2E93336F9 /* Pods-DownRange.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownRange.debug.xcconfig"; path = "Target Support Files/Pods-DownRange/Pods-DownRange.debug.xcconfig"; sourceTree = "<group>"; };
+		1C6B8EA0CE62265A9D06FEB1 /* Pods_DownRange.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DownRange.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		832DA33225B8972C00EE0AE5 /* Gun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gun.swift; sourceTree = "<group>"; };
 		8358DB9D259240FC005C8F83 /* DownRange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DownRange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8358DBA0259240FC005C8F83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +72,9 @@
 		83BDFB8525A36C8E000840FD /* ZeroDistanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroDistanceViewController.swift; sourceTree = "<group>"; };
 		83DF78D325A4B68100EF0B36 /* MilsAdustmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilsAdustmentTableViewCell.swift; sourceTree = "<group>"; };
 		83ECB0EE273D7896001F61FA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9E46BDAD62D715AF52F7D101 /* Pods-DownRangeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownRangeTests.release.xcconfig"; path = "Target Support Files/Pods-DownRangeTests/Pods-DownRangeTests.release.xcconfig"; sourceTree = "<group>"; };
+		D55E19F026EE8888C74D86DC /* Pods-DownRange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownRange.release.xcconfig"; path = "Target Support Files/Pods-DownRange/Pods-DownRange.release.xcconfig"; sourceTree = "<group>"; };
+		E5AE3404038A68DF96AE27DF /* Pods-DownRangeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownRangeTests.debug.xcconfig"; path = "Target Support Files/Pods-DownRangeTests/Pods-DownRangeTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9024E1D393C21EE1EC470635 /* Pods_DownRange.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +108,8 @@
 			children = (
 				8358DB9F259240FC005C8F83 /* DownRange */,
 				8358DB9E259240FC005C8F83 /* Products */,
+				AEB8528C6D2C1547080E00BF /* Pods */,
+				E74B69B312EA85684F0B59F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,6 +190,26 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		AEB8528C6D2C1547080E00BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				123AEC54B420E5D2E93336F9 /* Pods-DownRange.debug.xcconfig */,
+				D55E19F026EE8888C74D86DC /* Pods-DownRange.release.xcconfig */,
+				E5AE3404038A68DF96AE27DF /* Pods-DownRangeTests.debug.xcconfig */,
+				9E46BDAD62D715AF52F7D101 /* Pods-DownRangeTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E74B69B312EA85684F0B59F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C6B8EA0CE62265A9D06FEB1 /* Pods_DownRange.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -188,9 +217,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8358DBC7259240FD005C8F83 /* Build configuration list for PBXNativeTarget "DownRange" */;
 			buildPhases = (
+				D209299D589D881EB986830E /* [CP] Check Pods Manifest.lock */,
 				8358DB99259240FC005C8F83 /* Sources */,
 				8358DB9A259240FC005C8F83 /* Frameworks */,
 				8358DB9B259240FC005C8F83 /* Resources */,
+				D0DE71BD15E3942D0C782B3F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -305,6 +336,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D0DE71BD15E3942D0C782B3F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DownRange/Pods-DownRange-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DownRange/Pods-DownRange-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DownRange/Pods-DownRange-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D209299D589D881EB986830E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DownRange-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8358DB99259240FC005C8F83 /* Sources */ = {
@@ -489,6 +562,7 @@
 		};
 		8358DBC8259240FD005C8F83 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 123AEC54B420E5D2E93336F9 /* Pods-DownRange.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -508,6 +582,7 @@
 		};
 		8358DBC9259240FD005C8F83 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D55E19F026EE8888C74D86DC /* Pods-DownRange.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -18,7 +18,7 @@ class MilsAdustmentTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     //MARK: - UI Update Methods
     
     func updateView(with profile: Profile?, selectedProfile: Profile?) {
