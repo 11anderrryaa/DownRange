@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,8 @@
 		83859BA225D2E1580073D775 /* DropChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83859BA125D2E1580073D775 /* DropChart.swift */; };
 		83859BA725D2E1BE0073D775 /* DropChartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83859BA625D2E1BE0073D775 /* DropChartTableViewController.swift */; };
 		83859BAC25D590BA0073D775 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83859BAB25D590BA0073D775 /* WebViewController.swift */; };
+		83A66EB227E67FEA004F527F /* GunCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A66EB027E67FEA004F527F /* GunCollectionViewCell.swift */; };
+		83A66EB327E67FEA004F527F /* GunCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83A66EB127E67FEA004F527F /* GunCollectionViewCell.xib */; };
 		83BD8BA427C89FBE0062DFAC /* GunController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BD8BA327C89FBE0062DFAC /* GunController.swift */; };
 		83BDFB8625A36C8E000840FD /* ZeroDistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BDFB8525A36C8E000840FD /* ZeroDistanceViewController.swift */; };
 		83DF78D425A4B68100EF0B36 /* MilsAdustmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF78D325A4B68100EF0B36 /* MilsAdustmentTableViewCell.swift */; };
@@ -68,6 +70,8 @@
 		83859BA125D2E1580073D775 /* DropChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropChart.swift; sourceTree = "<group>"; };
 		83859BA625D2E1BE0073D775 /* DropChartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropChartTableViewController.swift; sourceTree = "<group>"; };
 		83859BAB25D590BA0073D775 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		83A66EB027E67FEA004F527F /* GunCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GunCollectionViewCell.swift; sourceTree = "<group>"; };
+		83A66EB127E67FEA004F527F /* GunCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GunCollectionViewCell.xib; sourceTree = "<group>"; };
 		83BD8BA327C89FBE0062DFAC /* GunController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GunController.swift; sourceTree = "<group>"; };
 		83BDFB8525A36C8E000840FD /* ZeroDistanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroDistanceViewController.swift; sourceTree = "<group>"; };
 		83DF78D325A4B68100EF0B36 /* MilsAdustmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilsAdustmentTableViewCell.swift; sourceTree = "<group>"; };
@@ -186,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				83BD8BA127C7DB720062DFAC /* TableView */,
+				83A66EB027E67FEA004F527F /* GunCollectionViewCell.swift */,
+				83A66EB127E67FEA004F527F /* GunCollectionViewCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -198,7 +204,6 @@
 				E5AE3404038A68DF96AE27DF /* Pods-DownRangeTests.debug.xcconfig */,
 				9E46BDAD62D715AF52F7D101 /* Pods-DownRangeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -318,6 +323,7 @@
 				83ECB0EF273D7896001F61FA /* LaunchScreen.storyboard in Resources */,
 				83859B9825C85A370073D775 /* Assets.xcassets in Resources */,
 				8358DBA8259240FC005C8F83 /* Main.storyboard in Resources */,
+				83A66EB327E67FEA004F527F /* GunCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +398,7 @@
 				83BDFB8625A36C8E000840FD /* ZeroDistanceViewController.swift in Sources */,
 				8358DBE92592534A005C8F83 /* RangeTableViewController.swift in Sources */,
 				8358DBDC25924DCA005C8F83 /* Profile.swift in Sources */,
+				83A66EB227E67FEA004F527F /* GunCollectionViewCell.swift in Sources */,
 				835F642E27CE7A0900EF2A81 /* K.swift in Sources */,
 				83859B9D25D2E1410073D775 /* DropChartTableViewCell.swift in Sources */,
 				8358DBA1259240FC005C8F83 /* AppDelegate.swift in Sources */,
