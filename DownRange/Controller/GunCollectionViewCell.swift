@@ -10,9 +10,12 @@ import expanding_collection
 
 class GunCollectionViewCell: BasePageCollectionCell {
 
+    @IBOutlet weak var cellImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        cellImage.image = UIImage(named: "RiflePicture")
     }
 
 }

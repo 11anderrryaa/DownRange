@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,15 +17,36 @@
                 <rect key="frame" x="0.0" y="0.0" width="214" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Trm-13-6hN">
-                        <rect key="frame" x="-26" y="-39" width="240" height="128"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Trm-13-6hN">
+                        <rect key="frame" x="0.0" y="-57" width="214" height="164"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NIY-3f-rtO">
+                                <rect key="frame" x="0.0" y="0.0" width="214" height="164"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="214" id="835-mt-fr7"/>
+                            <constraint firstItem="NIY-3f-rtO" firstAttribute="leading" secondItem="Trm-13-6hN" secondAttribute="leading" id="TTc-wi-fjZ"/>
+                            <constraint firstAttribute="bottom" secondItem="NIY-3f-rtO" secondAttribute="bottom" id="WVV-TC-aMH"/>
+                            <constraint firstItem="NIY-3f-rtO" firstAttribute="top" secondItem="Trm-13-6hN" secondAttribute="top" id="p2h-ZL-VUv"/>
+                            <constraint firstAttribute="trailing" secondItem="NIY-3f-rtO" secondAttribute="trailing" id="spL-pi-UKw"/>
+                            <constraint firstAttribute="height" constant="164" id="x1A-cv-cLa"/>
+                        </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Trm-13-6hN" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="2l5-wQ-Ft4"/>
+                <constraint firstItem="Trm-13-6hN" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="uk7-le-rA9"/>
+            </constraints>
             <size key="customSize" width="214" height="50"/>
+            <connections>
+                <outlet property="cellImage" destination="NIY-3f-rtO" id="1zP-bZ-RN2"/>
+                <outlet property="frontConstraintY" destination="2l5-wQ-Ft4" id="arj-DV-FSW"/>
+                <outlet property="frontContainerView" destination="Trm-13-6hN" id="rpk-Hg-PXA"/>
+            </connections>
             <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
         </collectionViewCell>
     </objects>

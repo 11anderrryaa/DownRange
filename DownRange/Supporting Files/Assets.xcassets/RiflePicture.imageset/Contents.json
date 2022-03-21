@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "179-1795828_rifle-stock-camo-kryptek-hd-png-download.png-1.jpeg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "179-1795828_rifle-stock-camo-kryptek-hd-png-download.png.jpeg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "179-1795828_rifle-stock-camo-kryptek-hd-png-download.png-2.jpeg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
