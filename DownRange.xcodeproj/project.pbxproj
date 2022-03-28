@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		832D6F0A27F23E4D0018C9D3 /* GunListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832D6F0927F23E4D0018C9D3 /* GunListCollectionViewController.swift */; };
 		832DA33325B8972C00EE0AE5 /* Gun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832DA33225B8972C00EE0AE5 /* Gun.swift */; };
+		833B534027F2423000A8D7B5 /* GunCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833B533E27F2423000A8D7B5 /* GunCollectionViewCell.swift */; };
+		833B534127F2423000A8D7B5 /* GunCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 833B533F27F2423000A8D7B5 /* GunCollectionViewCell.xib */; };
 		8358DBA1259240FC005C8F83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8358DBA0259240FC005C8F83 /* AppDelegate.swift */; };
 		8358DBA3259240FC005C8F83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8358DBA2259240FC005C8F83 /* SceneDelegate.swift */; };
 		8358DBA8259240FC005C8F83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8358DBA6259240FC005C8F83 /* Main.storyboard */; };
@@ -46,7 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		832D6F0927F23E4D0018C9D3 /* GunListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GunListCollectionViewController.swift; sourceTree = "<group>"; };
 		832DA33225B8972C00EE0AE5 /* Gun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gun.swift; sourceTree = "<group>"; };
+		833B533E27F2423000A8D7B5 /* GunCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GunCollectionViewCell.swift; sourceTree = "<group>"; };
+		833B533F27F2423000A8D7B5 /* GunCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GunCollectionViewCell.xib; sourceTree = "<group>"; };
 		8358DB9D259240FC005C8F83 /* DownRange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DownRange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8358DBA0259240FC005C8F83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8358DBA2259240FC005C8F83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +183,9 @@
 			isa = PBXGroup;
 			children = (
 				83BD8BA127C7DB720062DFAC /* TableView */,
+				832D6F0927F23E4D0018C9D3 /* GunListCollectionViewController.swift */,
+				833B533E27F2423000A8D7B5 /* GunCollectionViewCell.swift */,
+				833B533F27F2423000A8D7B5 /* GunCollectionViewCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -287,6 +296,7 @@
 				83ECB0EF273D7896001F61FA /* LaunchScreen.storyboard in Resources */,
 				83859B9825C85A370073D775 /* Assets.xcassets in Resources */,
 				8358DBA8259240FC005C8F83 /* Main.storyboard in Resources */,
+				833B534127F2423000A8D7B5 /* GunCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +336,8 @@
 				8358DBA3259240FC005C8F83 /* SceneDelegate.swift in Sources */,
 				83859BAC25D590BA0073D775 /* WebViewController.swift in Sources */,
 				8358DBD7259241B2005C8F83 /* GunListTableViewController.swift in Sources */,
+				833B534027F2423000A8D7B5 /* GunCollectionViewCell.swift in Sources */,
+				832D6F0A27F23E4D0018C9D3 /* GunListCollectionViewController.swift in Sources */,
 				835F642C27CD225500EF2A81 /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

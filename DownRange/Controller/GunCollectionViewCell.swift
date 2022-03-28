@@ -2,20 +2,20 @@
 //  GunCollectionViewCell.swift
 //  DownRange
 //
-//  Created by Ryan Anderson on 3/19/22.
+//  Created by Ryan Anderson on 3/28/22.
 //
 
 import UIKit
-import expanding_collection
 
-class GunCollectionViewCell: BasePageCollectionCell {
+class GunCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var cellImage: UIImageView!
+    @IBOutlet weak var gunLabel: UILabel!
+    //    @IBOutlet weak var gunImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        cellImage.image = UIImage(named: "RiflePicture")
+        // Initialization code
+//        gunImage.image = .init(named: "RiflePicture")
     }
 
 }
