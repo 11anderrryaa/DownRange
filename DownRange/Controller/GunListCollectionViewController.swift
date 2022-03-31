@@ -54,12 +54,9 @@ class GunListCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        cell.backgroundColor = .black
-        let label = UILabel()
-        label.text = "Test"
-        label.textColor = .white
-        cell.addSubview(label)
+        cell.backgroundColor = .red
         // Configure the cell
+
         
         return cell
     }
