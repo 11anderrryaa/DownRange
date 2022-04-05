@@ -10,8 +10,7 @@ import UIKit
 class GunListViewController: UIViewController {
     
     var counter = 1
-    
-    
+      
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -25,11 +24,9 @@ class GunListViewController: UIViewController {
         collectionView.dataSource = self
         
     }
-    
-    
-    
 }
 
+//MARK: - Delegate Methods
 extension GunListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -37,8 +34,9 @@ extension GunListViewController: UICollectionViewDelegate {
         collectionView.deselectItem(at: indexPath, animated: true)
         print("You tapped Element", indexPath.row)
     }
-    
 }
+
+//MARK: - DataSource Methods
 extension GunListViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -46,9 +44,7 @@ extension GunListViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
-        print(indexPath.row)
+
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.cellIdentifier, for: indexPath) as? GunCollectionViewCell else { return UICollectionViewCell() }
         
         cell.backgroundColor = UIColor(named: "CellBackGroundColor")
@@ -65,6 +61,8 @@ extension GunListViewController: UICollectionViewDataSource {
         return cell
     }
 }
+
+//MARK: - DelegateFlowLayout Methods
 extension GunListViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

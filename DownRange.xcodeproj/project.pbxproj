@@ -25,7 +25,6 @@
 		83A3C00327FB81C2006F20ED /* GunListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A3C00227FB81C2006F20ED /* GunListViewController.swift */; };
 		83A3C00627FB84D2006F20ED /* GunCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A3C00427FB84D2006F20ED /* GunCollectionViewCell.swift */; };
 		83A3C00727FB84D2006F20ED /* GunCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83A3C00527FB84D2006F20ED /* GunCollectionViewCell.xib */; };
-		83A8BBAE27FC81DF00E9F107 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8BBAD27FC81DF00E9F107 /* HeaderCollectionReusableView.swift */; };
 		83BD8BA427C89FBE0062DFAC /* GunController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BD8BA327C89FBE0062DFAC /* GunController.swift */; };
 		83BDFB8625A36C8E000840FD /* ZeroDistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BDFB8525A36C8E000840FD /* ZeroDistanceViewController.swift */; };
 		83DF78D425A4B68100EF0B36 /* MilsAdustmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF78D325A4B68100EF0B36 /* MilsAdustmentTableViewCell.swift */; };
@@ -72,7 +71,6 @@
 		83A3C00227FB81C2006F20ED /* GunListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GunListViewController.swift; sourceTree = "<group>"; };
 		83A3C00427FB84D2006F20ED /* GunCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GunCollectionViewCell.swift; sourceTree = "<group>"; };
 		83A3C00527FB84D2006F20ED /* GunCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GunCollectionViewCell.xib; sourceTree = "<group>"; };
-		83A8BBAD27FC81DF00E9F107 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		83BD8BA327C89FBE0062DFAC /* GunController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GunController.swift; sourceTree = "<group>"; };
 		83BDFB8525A36C8E000840FD /* ZeroDistanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroDistanceViewController.swift; sourceTree = "<group>"; };
 		83DF78D325A4B68100EF0B36 /* MilsAdustmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilsAdustmentTableViewCell.swift; sourceTree = "<group>"; };
@@ -136,6 +134,16 @@
 			path = DownRange;
 			sourceTree = "<group>";
 		};
+		83A8BBAF27FC8AD900E9F107 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				83A3C00227FB81C2006F20ED /* GunListViewController.swift */,
+				83A3C00427FB84D2006F20ED /* GunCollectionViewCell.swift */,
+				83A3C00527FB84D2006F20ED /* GunCollectionViewCell.xib */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
 		83BD8BA127C7DB720062DFAC /* TableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,10 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				83BD8BA127C7DB720062DFAC /* TableView */,
-				83A3C00227FB81C2006F20ED /* GunListViewController.swift */,
-				83A3C00427FB84D2006F20ED /* GunCollectionViewCell.swift */,
-				83A3C00527FB84D2006F20ED /* GunCollectionViewCell.xib */,
-				83A8BBAD27FC81DF00E9F107 /* HeaderCollectionReusableView.swift */,
+				83A8BBAF27FC8AD900E9F107 /* CollectionView */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -336,7 +341,6 @@
 				835F642E27CE7A0900EF2A81 /* K.swift in Sources */,
 				83859B9D25D2E1410073D775 /* DropChartTableViewCell.swift in Sources */,
 				8358DBA1259240FC005C8F83 /* AppDelegate.swift in Sources */,
-				83A8BBAE27FC81DF00E9F107 /* HeaderCollectionReusableView.swift in Sources */,
 				8358DBF225939578005C8F83 /* GunTableViewCell.swift in Sources */,
 				8358DBA3259240FC005C8F83 /* SceneDelegate.swift in Sources */,
 				83859BAC25D590BA0073D775 /* WebViewController.swift in Sources */,
