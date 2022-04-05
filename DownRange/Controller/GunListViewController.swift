@@ -11,21 +11,23 @@ class GunListViewController: UIViewController {
     
     var counter = 1
     
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.register(GunCollectionViewCell.nib(), forCellWithReuseIdentifier: K.cellIdentifier)
+        collectionView.register(
+            GunCollectionViewCell.nib(),
+            forCellWithReuseIdentifier: K.cellIdentifier)
         
         collectionView.delegate = self
         collectionView.dataSource = self
-
+        
     }
     
     
-
+    
 }
 
 extension GunListViewController: UICollectionViewDelegate {
@@ -62,10 +64,14 @@ extension GunListViewController: UICollectionViewDataSource {
         
         return cell
     }
-    
-    
 }
-
-//extension GunListViewController: UICollectionViewLayout {
-//
-//}
+extension GunListViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (view.frame.width / 2), height: 300)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 15, left: 10, bottom: 10, right: 10)
+    }
+}
