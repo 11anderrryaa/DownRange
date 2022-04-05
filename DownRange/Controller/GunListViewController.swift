@@ -8,6 +8,9 @@
 import UIKit
 
 class GunListViewController: UIViewController {
+    
+    var counter = 1
+    
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -21,16 +24,7 @@ class GunListViewController: UIViewController {
 
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
 
@@ -51,11 +45,27 @@ extension GunListViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReusableCell", for: indexPath) as? GunCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.configure(with: UIImage(named: "RiflePicture") ?? UIImage() )
+        print(indexPath.row)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.cellIdentifier, for: indexPath) as? GunCollectionViewCell else { return UICollectionViewCell() }
+        
+        cell.backgroundColor = UIColor(named: "CellBackGroundColor")
+        
+        if counter <= 12 {
+            counter += 1
+            
+        } else {
+            counter = 1
+        }
+        
+        cell.configure(with: UIImage(named: "Image-\(counter)") ?? UIImage(), label: "test" )
+        
         return cell
     }
     
     
 }
+
+//extension GunListViewController: UICollectionViewLayout {
+//
+//}

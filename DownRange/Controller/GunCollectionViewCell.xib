@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,29 +11,45 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ReusableCell" id="gTV-IL-0wX" customClass="GunCollectionViewCell" customModule="DownRange" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="245" height="98"/>
+            <rect key="frame" x="0.0" y="0.0" width="245" height="300"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="245" height="98"/>
+                <rect key="frame" x="0.0" y="0.0" width="245" height="300"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pwq-RH-R31">
-                        <rect key="frame" x="0.0" y="0.0" width="245" height="98"/>
+                        <rect key="frame" x="0.0" y="20" width="245" height="280"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="752" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wH6-le-41k">
+                        <rect key="frame" x="0.0" y="0.0" width="245" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <color key="highlightedColor" name="AccentColor"/>
+                    </label>
                 </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <viewLayoutGuide key="safeArea" id="yHF-hK-2Bk"/>
             <constraints>
+                <constraint firstItem="wH6-le-41k" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="33M-Bk-2Hb"/>
+                <constraint firstItem="wH6-le-41k" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Pit-l9-EB2"/>
                 <constraint firstItem="pwq-RH-R31" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Tqr-mO-if8"/>
                 <constraint firstAttribute="bottom" secondItem="pwq-RH-R31" secondAttribute="bottom" id="Vh2-iC-jUL"/>
-                <constraint firstItem="pwq-RH-R31" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cw6-hJ-8la"/>
+                <constraint firstItem="pwq-RH-R31" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="cw6-hJ-8la"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wH6-le-41k" secondAttribute="bottom" constant="89" id="nGg-To-wmX"/>
+                <constraint firstAttribute="trailing" secondItem="wH6-le-41k" secondAttribute="trailing" id="tYg-aY-dEN"/>
                 <constraint firstAttribute="trailing" secondItem="pwq-RH-R31" secondAttribute="trailing" id="x9R-hl-xVO"/>
             </constraints>
-            <size key="customSize" width="245" height="98"/>
+            <size key="customSize" width="245" height="253"/>
             <connections>
                 <outlet property="gunImage" destination="pwq-RH-R31" id="1ZC-50-nZI"/>
+                <outlet property="gunLabel" destination="wH6-le-41k" id="XRe-4x-LPN"/>
             </connections>
-            <point key="canvasLocation" x="278.98550724637681" y="166.74107142857142"/>
+            <point key="canvasLocation" x="277.536231884058" y="210.26785714285714"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
