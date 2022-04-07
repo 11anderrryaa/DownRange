@@ -18,10 +18,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pwq-RH-R31">
-                        <rect key="frame" x="0.0" y="20" width="245" height="280"/>
+                        <rect key="frame" x="0.0" y="20" width="245" height="260"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="752" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wH6-le-41k">
-                        <rect key="frame" x="0.0" y="0.0" width="245" height="20.5"/>
+                        <rect key="frame" x="0.0" y="280" width="245" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <color key="highlightedColor" name="AccentColor"/>
@@ -30,12 +30,12 @@
             </view>
             <viewLayoutGuide key="safeArea" id="yHF-hK-2Bk"/>
             <constraints>
-                <constraint firstItem="wH6-le-41k" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="33M-Bk-2Hb"/>
                 <constraint firstItem="wH6-le-41k" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Pit-l9-EB2"/>
+                <constraint firstItem="wH6-le-41k" firstAttribute="top" secondItem="pwq-RH-R31" secondAttribute="bottom" id="QRt-X0-UuP"/>
                 <constraint firstItem="pwq-RH-R31" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Tqr-mO-if8"/>
-                <constraint firstAttribute="bottom" secondItem="pwq-RH-R31" secondAttribute="bottom" id="Vh2-iC-jUL"/>
+                <constraint firstAttribute="bottom" secondItem="pwq-RH-R31" secondAttribute="bottom" constant="20" id="Vh2-iC-jUL"/>
                 <constraint firstItem="pwq-RH-R31" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="cw6-hJ-8la"/>
-                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wH6-le-41k" secondAttribute="bottom" constant="89" id="nGg-To-wmX"/>
+                <constraint firstAttribute="bottom" secondItem="wH6-le-41k" secondAttribute="bottom" id="nGg-To-wmX"/>
                 <constraint firstAttribute="trailing" secondItem="wH6-le-41k" secondAttribute="trailing" id="tYg-aY-dEN"/>
                 <constraint firstAttribute="trailing" secondItem="pwq-RH-R31" secondAttribute="trailing" id="x9R-hl-xVO"/>
             </constraints>

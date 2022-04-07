@@ -47,6 +47,11 @@ extension GunListViewController: UICollectionViewDataSource {
 
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.cellIdentifier, for: indexPath) as? GunCollectionViewCell else { return UICollectionViewCell() }
         
+//        cell.layer.borderColor = CGColor.init(red: 50, green: 50, blue: 50, alpha: 0)
+//        cell.layer.borderWidth = 10
+//        cell.layer.frame.size.width = 100
+        cell.layer.cornerRadius = 25
+        
         cell.backgroundColor = UIColor(named: "CellBackGroundColor")
         
         if counter <= 12 {
