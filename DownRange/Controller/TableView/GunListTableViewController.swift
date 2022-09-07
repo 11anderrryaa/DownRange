@@ -55,7 +55,7 @@ class GunListTableViewController: UITableViewController {
     fileprivate func newUserAlert() {
         if gc.guns.count == 0 {
             let infoAlertController = UIAlertController(title: K.Alert.newTitle, message: nil, preferredStyle: .alert)
-            let cancelButton = UIAlertAction(title: K.Alert.cancel, style: .cancel, handler: .none)
+            let cancelButton = UIAlertAction(title: K.Alert.okay, style: .cancel, handler: .none)
             infoAlertController.addAction(cancelButton)
             present(infoAlertController, animated: true, completion: nil)
         }
