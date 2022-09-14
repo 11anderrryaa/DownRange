@@ -1,5 +1,5 @@
 //
-//  Clicks.swift
+//  Profile.swift
 //  DownRange
 //
 //  Created by Ryan Anderson on 12/22/20.

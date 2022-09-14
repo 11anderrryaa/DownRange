@@ -1,5 +1,5 @@
 //
-//  ModelController.swift
+//  GunController.swift
 //  DownRange
 //
 //  Created by Ryan Anderson on 2/24/22.
