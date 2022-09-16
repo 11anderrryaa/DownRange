@@ -11,7 +11,6 @@ class Gun: Codable {
     
     var name: String
     var profiles: [Profile] = []
-    var dropChart: [DropChart] = []
     
     init (name: String) {
         self.name = name
